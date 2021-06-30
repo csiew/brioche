@@ -1,7 +1,7 @@
 import React from "react";
 import { doImport } from "../AssetImporter";
 
-import { PageHeader } from "../../components/surfaces/PageHeader";
+import { PageHeader } from "../../components/surfaces/PageHeader.jsx";
 
 doImport();
 

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { doImport } from "../AssetImporter";
 
-import { Toolbar } from "../../components/surfaces/Toolbar";
-import { TabBar, TabBarItem } from "../../components/controls/TabBar";
+import { Toolbar } from "../../components/surfaces/Toolbar.jsx";
+import { TabBar, TabBarItem } from "../../components/controls/TabBar.jsx";
 
 doImport();
 

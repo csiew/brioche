@@ -1,12 +1,12 @@
 // Controls
-export * from './components/controls/Button';
-export * from './components/controls/SelectableList';
-export * from './components/controls/TabBar';
+export * from './components/controls/Button.jsx';
+export * from './components/controls/SelectableList.jsx';
+export * from './components/controls/TabBar.jsx';
 
 // Layouts
-export * from './components/layouts/PageLayout';
+export * from './components/layouts/PageLayout.jsx';
 
 // Surfaces
-export * from './components/surfaces/Card';
-export * from './components/surfaces/PageHeader';
-export * from './components/surfaces/Toolbar';
+export * from './components/surfaces/Card.jsx';
+export * from './components/surfaces/PageHeader.jsx';
+export * from './components/surfaces/Toolbar.jsx';

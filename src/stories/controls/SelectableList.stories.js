@@ -1,8 +1,8 @@
 import React from "react";
 import { doImport } from "../AssetImporter";
 
-import { Card, CardTitle, CardBody } from "../../components/surfaces/Card";
-import { SelectableList, SelectableListItem } from "../../components/controls/SelectableList";
+import { Card, CardTitle, CardBody } from "../../components/surfaces/Card.jsx";
+import { SelectableList, SelectableListItem } from "../../components/controls/SelectableList.jsx";
 
 doImport();
 

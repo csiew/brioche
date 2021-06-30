@@ -1,9 +1,9 @@
 import React from "react";
 import { doImport } from "../AssetImporter";
 
-import { DynamicPageView, MainSidebarView } from "../../components/layouts/PageLayout";
-import { PageHeader } from "../../components/surfaces/PageHeader";
-import { Card, CardBody, CardTitle } from "../../components/surfaces/Card";
+import { DynamicPageView } from "../../components/layouts/PageLayout.jsx";
+import { PageHeader } from "../../components/surfaces/PageHeader.jsx";
+import { Card, CardBody, CardTitle } from "../../components/surfaces/Card.jsx";
 
 doImport();
 

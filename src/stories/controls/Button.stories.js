@@ -1,7 +1,7 @@
 import React from "react";
 import { doImport } from "../AssetImporter";
 
-import { Button } from "../../components/controls/Button";
+import { Button } from "../../components/controls/Button.jsx";
 import { MdMenu } from "react-icons/md";
 
 doImport();
