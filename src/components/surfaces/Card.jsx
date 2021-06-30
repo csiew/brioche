@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { MdArrowDropDown, MdArrowDropUp, MdArrowUpward } from "react-icons/md";
 
-import { Button } from "./Button";
+import { Button } from "../controls/Button";
 
 export function CardToggleButton({
   isVisible,
@@ -51,6 +51,8 @@ export function CardToggleFloatingButton({
 export function Card({
   className,
   children,
+  header,
+  body,
   id,
   isFloating,
   isWindowMode,
@@ -105,6 +107,8 @@ export function Card({
       onDoubleClick={(e) => isFloating ? toggleFloating(e) : undefined}
       onMouseDown={(e) => isWindowMode ? handleMouseDown(e) : undefined}
     >
+      {header}
+      {body}
       {children}
     </div>
   );
@@ -112,10 +116,11 @@ export function Card({
 
 export function CardTitle({
   className,
-  children
+  children,
+  noBody,
 }) {
   return (
-    <div className={`title width-full ${className ? className : ''}`}>
+    <div className={`title width-full ${className ? className : ''} ${noBody ? 'card-border-bottom-radius hug-bottom' : ''}`}>
       {children}
     </div>
   );

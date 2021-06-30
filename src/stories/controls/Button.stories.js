@@ -1,14 +1,14 @@
 import React from "react";
-import { doImport } from "./AssetImporter";
+import { doImport } from "../AssetImporter";
 
-import { Button } from "../components/Button";
+import { Button } from "../../components/controls/Button";
 import { MdMenu } from "react-icons/md";
 
 doImport();
 
 const testData = {
-  label: "Button text",
-  tooltip: "Tooltip text",
+  label: "Lorem ipsum",
+  tooltip: "Lorem ipsum",
 };
 
 export default {
@@ -18,13 +18,13 @@ export default {
     label: {
       control: {
         type: "text",
-        defaultValue: testData.label,
+        defaultValue: "Button text",
       }
     },
     tooltip: {
       control: {
         type: "text",
-        defaultValue: testData.tooltip,
+        defaultValue: "Tooltip text",
       }
     },
     onClick: { action: "clicked" },

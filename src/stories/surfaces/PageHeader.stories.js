@@ -1,8 +1,7 @@
 import React from "react";
-import { doImport } from "./AssetImporter";
-import { storiesOf } from "@storybook/react";
+import { doImport } from "../AssetImporter";
 
-import { PageHeader } from "../components/PageHeader";
+import { PageHeader } from "../../components/surfaces/PageHeader";
 
 doImport();
 
@@ -49,8 +48,8 @@ const Template = ({
   );
 }
 
-export const Plain = Template.bind({});
-Plain.args = {
+export const Default = Template.bind({});
+Default.args = {
    title: testData.title,
    isTextured: false,
    isItalic: false,

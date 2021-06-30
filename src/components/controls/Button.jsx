@@ -11,7 +11,7 @@ export function Button({
   return (
     <button
       title={tooltip}
-      className={`${className ? className : ''} ${iconOnly ? 'button-icon-only padding-none' : ''} ${primary ? 'button-primary' : ''} ${round ? 'border-radius-100pct' : ''}`}
+      className={`${iconOnly ? 'button-icon-only padding-none' : ''} ${primary ? 'button-primary' : ''} ${round ? 'border-radius-100pct' : ''} ${className ? className : ''}`}
       style={style}
       onClick={onClick}
     >

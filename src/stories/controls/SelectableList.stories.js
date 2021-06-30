@@ -1,13 +1,10 @@
 import React from "react";
-import { doImport } from "./AssetImporter";
-import { storiesOf } from "@storybook/react";
+import { doImport } from "../AssetImporter";
 
-import { Card, CardTitle, CardBody } from "../components/Card";
-import { SelectableList, SelectableListItem } from "../components/SelectableList";
+import { Card, CardTitle, CardBody } from "../../components/surfaces/Card";
+import { SelectableList, SelectableListItem } from "../../components/controls/SelectableList";
 
 doImport();
-
-const stories = storiesOf("Controls", module);
 
 const testData = {
   title: "Lorem ipsum",
@@ -30,7 +27,12 @@ const testData = {
   ],
 };
 
-stories.add("SelectableList", () => {
+export default {
+  title: "Selectable List",
+  component: SelectableList,
+};
+
+const Template = () => {
   return (
     <Card className="width-max-480">
       <CardTitle>
@@ -41,8 +43,8 @@ stories.add("SelectableList", () => {
           {
             testData.content.map(item => {
               return (
-                <SelectableListItem>
-                  {item}
+                <SelectableListItem key={item} tooltip={item}>
+                  {item.slice(0,48)}...
                 </SelectableListItem>
               );
             })
@@ -51,4 +53,6 @@ stories.add("SelectableList", () => {
       </CardBody>
     </Card>
   );
-});
+};
+
+export const Default = Template.bind({});
