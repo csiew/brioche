@@ -1,8 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { doImport } from "../../util/AssetImporter";
-
-doImport();
+import "../../App.css";
 
 export function TabBar({
   className,

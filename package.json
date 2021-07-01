@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006 -s ./src/styles,./src/assets",
     "build-storybook": "build-storybook -s ./src/styles,./src/assets",
-    "build-lib": "rollup -c"
+    "build-lib": "rollup -c; cp -r src/assets dist/assets; cp -r src/styles dist/styles"
   },
   "author": "Clarence Siew",
   "license": "MIT",
@@ -25,7 +25,6 @@
     "@storybook/react": "^6.3.1",
     "babel-loader": "^8.2.2",
     "cssnano": "^4.1.11",
-    "postcss-import": "^14.0.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",

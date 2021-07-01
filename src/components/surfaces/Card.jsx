@@ -1,10 +1,7 @@
 import React, { useRef, useState } from "react";
-import { doImport } from "../../util/AssetImporter";
 import { MdArrowDropDown, MdArrowDropUp, MdArrowUpward } from "react-icons/md";
-
 import { Button } from "../controls/Button.jsx";
-
-doImport();
+import "../../App.css";
 
 export function CardToggleButton({
   isVisible,

@@ -1,7 +1,5 @@
 import React from "react";
-import { doImport } from "../../util/AssetImporter";
-
-doImport();
+import "../../App.css";
 
 export function Toolbar(props) {
   return (
