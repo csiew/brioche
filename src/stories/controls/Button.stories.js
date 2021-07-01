@@ -1,10 +1,6 @@
 import React from "react";
-import { doImport } from "../AssetImporter";
-
 import { Button } from "../../components/controls/Button.jsx";
 import { MdMenu } from "react-icons/md";
-
-doImport();
 
 const testData = {
   label: "Lorem ipsum",

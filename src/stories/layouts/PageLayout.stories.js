@@ -1,11 +1,7 @@
 import React from "react";
-import { doImport } from "../AssetImporter";
-
 import { DynamicPageView } from "../../components/layouts/PageLayout.jsx";
 import { PageHeader } from "../../components/surfaces/PageHeader.jsx";
 import { Card, CardBody, CardTitle } from "../../components/surfaces/Card.jsx";
-
-doImport();
 
 const testData = {
   title: "Lorem ipsum",

@@ -3,7 +3,8 @@ import resolve from "@rollup/plugin-node-resolve";
 import external from "rollup-plugin-peer-deps-external";
 import { terser } from "rollup-plugin-terser";
 import postcss from "rollup-plugin-postcss";
-import cssnano from 'cssnano';
+import postcssImport from "postcss-import";
+import cssnano from "cssnano";
 
 export default [
   {
@@ -22,6 +23,7 @@ export default [
       postcss({
         extensions: [".css"],
         plugins: [
+          postcssImport(),
           cssnano(),
         ],
         minimize: true,

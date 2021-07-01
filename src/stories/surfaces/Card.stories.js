@@ -1,9 +1,5 @@
 import React from "react";
-import { doImport } from "../AssetImporter";
-
 import { Card, CardTitle, CardBody } from "../../components/surfaces/Card.jsx";
-
-doImport();
 
 const testData = {
   title: "Lorem ipsum",

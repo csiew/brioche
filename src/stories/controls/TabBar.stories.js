@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-import { doImport } from "../AssetImporter";
-
 import { TabBar, TabBarItem } from "../../components/controls/TabBar.jsx";
-
-doImport();
 
 const testData = {
   items: [

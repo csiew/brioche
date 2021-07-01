@@ -1,4 +1,7 @@
 import React from "react";
+import { doImport } from "../../util/AssetImporter";
+
+doImport();
 
 export function MainSidebarView({
   className,
