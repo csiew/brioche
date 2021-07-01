@@ -6,25 +6,37 @@ The roadmap will outline what to expect for future releases at a later date. At 
 
 Components and categories will be added to this list over time.
 
+### Misc
+
+| Component | Status | Notes |
+|---|---|---|
+| AppContainer | In progress | To be moved to page layouts. |
+
 ### Controls
 
 | Component | Status | Notes |
 |---|---|---|
 | Button | In progress | |
-| SelectableListItem | In progress | To be moved to layouts. |
-| SelectableList | In progress | |
+| SelectableListItem | In progress | |
+| SelectableList | In progress | To be moved to fancy layouts. |
 | TabBarItem | In progress | |
-| TabBar | In progress | To be moved to layouts. |
+| TabBar | In progress | To be moved to fancy layouts. |
 | ToggleSwitch | Pending | |
 | Checkbox | Pending | |
 | RadioButton | Pending |  |
+
+### Page Layouts
+
+| Component | Status | Notes |
+|---|---|---|
+| ArticleLayout | Pending | |
+| NavigationLayout | Pending | |
 
 ### Fancy Layouts
 
 | Component | Status | Notes |
 |---|---|---|
-| AppContainer | In progress | |
-| PageLayout | In progress | To be renamed to DynamicPageLayout or PageView |
+| PageLayout | In progress | To be renamed to MainSidebarLayout or simply Page; to be moved to page layouts. |
 | List | Pending | |
 | CheckboxList | Pending | |
 | RadioButtonList | Pending | |
