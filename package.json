@@ -2,8 +2,8 @@
   "name": "brioche",
   "version": "0.1.3",
   "description": "A React UI component library that's just as soft and pillowy as the bread it's named after",
-  "main": "index.js",
-  "module": "index.es.js",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006 -s ./src/styles,./src/assets",
