@@ -6,7 +6,7 @@ It is currently under heavy development and is *strictly not* recommended for us
 
 An example of a site which uses an early version of Brioche is [my personal website](https://clarencesiew.com) (before it was transformed into a library).
 
-You can view the [project roadmap here](https://github.com/csiew/brioche/blob/main/ROADMAP.md).
+You can view the [project roadmap here](https://github.com/csiew/brioche/wiki/Roadmap).
 
 
 ## Dependencies
