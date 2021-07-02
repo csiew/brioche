@@ -1,7 +1,7 @@
 import React from "react";
-import "../../App.css";
+import "../../../App.css";
 
-export function MainSidebarView({
+export function PageLayoutBody({
   className,
   mainClassName,
   sidebarClassName,
@@ -37,7 +37,7 @@ export function MainSidebarView({
   )
 }
 
-export function DynamicPageView({
+export function PageLayout({
   className,
   mainClassName,
   sidebarClassName,
@@ -48,7 +48,7 @@ export function DynamicPageView({
   return (
     <div className={`width-full margin-auto-horizontal grid grid-col-1 ${className ? className : ''}`}>
       {header}
-      <MainSidebarView
+      <PageLayoutBody
         mainClassName={mainClassName}
         sidebarClassName={sidebarClassName}
         main={main}

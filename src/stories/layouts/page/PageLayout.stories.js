@@ -1,7 +1,7 @@
 import React from "react";
-import { DynamicPageView } from "../../components/layouts/PageLayout.jsx";
-import { PageHeader } from "../../components/surfaces/PageHeader.jsx";
-import { Card, CardBody, CardTitle } from "../../components/surfaces/Card.jsx";
+import { PageLayout } from "../../../components/layouts/page/PageLayout.jsx";
+import { PageHeader } from "../../../components/surfaces/PageHeader.jsx";
+import { Card, CardBody, CardTitle } from "../../../components/surfaces/Card.jsx";
 
 const testData = {
   title: "Lorem ipsum",
@@ -9,8 +9,8 @@ const testData = {
 };
 
 export default {
-  title: "Dynamic Page View",
-  component: DynamicPageView,
+  title: "Page Layout",
+  component: PageLayout,
 };
 
 const Template = ({
@@ -21,12 +21,12 @@ const Template = ({
   sidebar,
 }) => {
   return (
-    <DynamicPageView
+    <PageLayout
       header={
         header === null ?
           null
         :
-          <PageHeader title={title} isItalic={true} isTextured={true} />
+          <PageHeader title={title} isItalic={true} isTextured={false} />
       }
       main={
         main === null ?

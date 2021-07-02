@@ -1,6 +1,7 @@
 import React from "react";
-import { Card, CardTitle, CardBody } from "../../components/surfaces/Card.jsx";
-import { SelectableList, SelectableListItem } from "../../components/controls/SelectableList.jsx";
+import { Card, CardTitle, CardBody } from "../../../components/surfaces/Card.jsx";
+import { List } from "../../../components/layouts/functional/List.jsx";
+import { ListItem } from "../../../components/controls/ListItem.jsx";
 
 const testData = {
   title: "Lorem ipsum",
@@ -24,31 +25,41 @@ const testData = {
 };
 
 export default {
-  title: "Selectable List",
-  component: SelectableList,
+  title: "List",
+  component: List,
 };
 
-const Template = () => {
+const Template = ({
+  edgeToEdge,
+}) => {
   return (
     <Card className="width-max-480">
       <CardTitle>
         <h2>{testData.title}</h2>
       </CardTitle>
       <CardBody className="padding-none">
-        <SelectableList>
+        <List edgeToEdge={edgeToEdge}>
           {
             testData.content.map(item => {
               return (
-                <SelectableListItem key={item} tooltip={item}>
+                <ListItem key={item} tooltip={item}>
                   {item.slice(0,48)}...
-                </SelectableListItem>
+                </ListItem>
               );
             })
           }
-        </SelectableList>
+        </List>
       </CardBody>
     </Card>
   );
 };
 
 export const Default = Template.bind({});
+Default.args = {
+  edgeToEdge: false,
+}
+
+export const EdgeToEdge = Template.bind({});
+EdgeToEdge.args = {
+  edgeToEdge: true,
+}
