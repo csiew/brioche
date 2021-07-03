@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TabBar, TabBarItem } from "../../components/controls/TabBar.jsx";
+import { TabBar, TabBarItem } from "../components/TabBar.jsx";
 
 const testData = {
   items: [

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Toolbar } from "../../components/surfaces/Toolbar.jsx";
-import { TabBar, TabBarItem } from "../../components/controls/TabBar.jsx";
+import { Toolbar } from "../components/Toolbar.jsx";
+import { TabBar, TabBarItem } from "../components/TabBar.jsx";
 
 const testData = {
   title: "Lorem ipsum",

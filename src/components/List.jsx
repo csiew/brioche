@@ -1,6 +1,18 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "../../App.css";
+import "../App.css";
+
+export function List({
+  className,
+  children,
+  edgeToEdge,
+}) {
+  return (
+    <div className={`list ${edgeToEdge ? 'edge-to-edge' : ''} ${className ? className : ''}`}>
+      {children}
+    </div>
+  );
+}
 
 export function ListItem({
   className,

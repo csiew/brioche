@@ -1,7 +1,6 @@
 import React from "react";
-import { Card, CardTitle, CardBody } from "../../../components/surfaces/Card.jsx";
-import { List } from "../../../components/layouts/functional/List.jsx";
-import { ListItem } from "../../../components/controls/ListItem.jsx";
+import { Card, CardTitle, CardBody } from "../components/Card.jsx";
+import { List, ListItem } from "../components/List.jsx";
 
 const testData = {
   title: "Lorem ipsum",

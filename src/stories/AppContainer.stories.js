@@ -1,5 +1,5 @@
 import React from "react";
-import { AppContainer } from "../../../components/layouts/page/AppContainer.jsx";
+import { AppContainer } from "../components/AppContainer.jsx";
 
 export default {
   component: AppContainer,

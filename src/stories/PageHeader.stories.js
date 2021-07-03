@@ -1,5 +1,5 @@
 import React from "react";
-import { PageHeader } from "../../components/surfaces/PageHeader.jsx";
+import { PageHeader } from "../components/PageHeader.jsx";
 
 const testData = {
   title: "Lorem ipsum",

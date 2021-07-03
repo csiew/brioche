@@ -1,7 +1,7 @@
 import React from "react";
-import { PageLayout } from "../../../components/layouts/page/PageLayout.jsx";
-import { PageHeader } from "../../../components/surfaces/PageHeader.jsx";
-import { Card, CardBody, CardTitle } from "../../../components/surfaces/Card.jsx";
+import { PageLayout } from "../components/PageLayout.jsx";
+import { PageHeader } from "../components/PageHeader.jsx";
+import { Card, CardBody, CardTitle } from "../components/Card.jsx";
 
 const testData = {
   title: "Lorem ipsum",

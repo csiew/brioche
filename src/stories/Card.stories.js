@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardTitle, CardBody } from "../../components/surfaces/Card.jsx";
+import { Card, CardTitle, CardBody } from "../components/Card.jsx";
 
 const testData = {
   title: "Lorem ipsum",
