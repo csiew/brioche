@@ -5,4 +5,6 @@ export * from "./components/List.jsx";
 export * from "./components/PageLayout.jsx";
 export * from "./components/PageHeader.jsx";
 export * from "./components/TabBar.jsx";
+export * from "./components/TextAreaBox.jsx";
+export * from "./components/TextBox.jsx";
 export * from "./components/Toolbar.jsx";

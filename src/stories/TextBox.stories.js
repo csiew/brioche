@@ -5,7 +5,7 @@ import { TextBox } from "../components/TextBox.jsx";
 const testData = {
   label: "Lorem ipsum",
   tooltip: "Lorem ipsum",
-  placeholder: "Lorem ipsum"
+  placeholder: "Lorem ipsum",
 };
 
 export default {
