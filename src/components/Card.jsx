@@ -1,114 +1,85 @@
-import React, { useRef, useState } from "react";
-import { MdArrowDropDown, MdArrowDropUp, MdArrowUpward } from "react-icons/md";
+import React, { useState } from "react";
+import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
 import { Button } from "./Button.jsx";
 import "../App.css";
 
-export function CardToggleButton({
-  isVisible,
+export function CardCollapseButton({
+  className,
+  style,
+  isCollapsed,
   cardName,
-  toggle
+  toggle,
+  isCollapsedValue,
+  isNotCollapsedValue,
 }) {
   return (
     <Button
-      tooltip={isVisible ? `Hide ${cardName}` : `Show ${cardName}`}
-      className="border-radius-100pct padding-none"
-      style={{
-        width: "2rem",
-        height: "2rem"
-      }}
+      tooltip={isCollapsed ? `Hide ${cardName}` : `Show ${cardName}`}
+      className={`border-radius-100pct padding-none ${className ? className : ''}`}
+      style={style}
       onClick={toggle}
-    >
-      {
-        isVisible ?
-          <MdArrowDropUp size="1.5rem" />
+      label={
+        isCollapsed ?
+          isCollapsedValue
         :
-          <MdArrowDropDown size="1.5rem" />
+          isNotCollapsedValue
       }
-    </Button>
-  );
-}
-
-export function CardToggleFloatingButton({
-  isVisible,
-  cardName,
-  toggle
-}) {
-  return (
-    <Button
-      tooltip={isVisible ? `Hide ${cardName}` : `Show ${cardName}`}
-      className="border-radius-100pct padding-none"
-      style={{
-        width: "2rem",
-        height: "2rem"
-      }}
-      onClick={toggle}
-    >
-      <MdArrowUpward size="1.5rem" />
-    </Button>
+    />
   );
 }
 
 export function Card({
   className,
+  headerClassName,
+  bodyClassName,
   children,
-  header,
+  title,
   body,
   id,
-  isFloating,
-  isWindowMode,
-  toggleFloating,
+  collaseButtonTitle,
+  collapseButtonClassName,
+  collapseButtonStyle,
+  isCollapsible,
+  isCollapsedValue,
+  isNotCollapsedValue,
 }) {
-  const windowRef = useRef();
-  const [x, setX] = useState(0);
-  const [y, setY] = useState(0);
-
-  const handleMouseDown = (e) => {
-    e.preventDefault();
-
-    if (!isFloating) return;
-
-    const body = document.querySelector('body');
-    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-
-    document.onmouseup = (e) => {
-      e.preventDefault();
-      document.onmousedown = null;
-      document.onmouseup = null;
-      document.onmousemove = null;
-    }
-
-    document.onmousemove = (e) => {
-      e.preventDefault();
-      pos1 = pos3 - e.clientX;
-      pos2 = pos4 - e.clientY;
-      pos3 = e.clientX;
-      pos4 = e.clientY;
-      const { left, top } = windowRef.current.getBoundingClientRect();
-      if ((left - pos1) >= 0) {
-        setX(left - pos1);
-      }
-      if ((top - pos2) - body.getBoundingClientRect().height >= 0) {
-        setY(top - pos2);
-      }
-    }
-  }
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
   return (
     <div
-      ref={windowRef}
       id={id}
-      className={`card width-full ${isFloating ? 'position-fixed width-max-480 height-max-640' : ''} ${className ? className : ''}`}
-      style={{
-        left: isFloating ? `${x}px` : null,
-        top: isFloating ? `${y}px` : null
-      }}
-      onDoubleClick={(e) => isFloating ? toggleFloating(e) : undefined}
-      onMouseDown={(e) => isWindowMode ? handleMouseDown(e) : undefined}
+      className={`card width-full ${className ? className : ''}`}
     >
-      {header}
-      {body}
+      {
+        title ?
+          <CardTitle className={`${headerClassName ? headerClassName : ''} ${(isCollapsible === true && isCollapsed === true) ? 'card-border-bottom-radius hug-bottom' : ''}`}>
+            <h2>{title}</h2>
+            {
+              isCollapsible ?
+                <CardCollapseButton
+                  className={collapseButtonClassName}
+                  style={collapseButtonStyle}
+                  cardName={collaseButtonTitle}
+                  isCollapsed={isCollapsed}
+                  toggle={() => setIsCollapsed(!isCollapsed)}
+                  isCollapsedValue={isCollapsedValue}
+                  isNotCollapsedValue={isNotCollapsedValue}
+                />
+              :
+                ''
+            }
+          </CardTitle>
+        :
+          ''
+      }
+      {
+        ((body !== null) && (isCollapsed === false)) ?
+          <CardBody className={bodyClassName ? bodyClassName : ''}>
+            {body}
+          </CardBody>
+        :
+          ''
+      }
       {children}
     </div>
   );

@@ -1,7 +1,8 @@
 import React from "react";
 import { PageLayout } from "../components/PageLayout.jsx";
 import { PageHeader } from "../components/PageHeader.jsx";
-import { Card, CardBody, CardTitle } from "../components/Card.jsx";
+import { Card } from "../components/Card.jsx";
+import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
 
 const testData = {
   title: "Lorem ipsum",
@@ -33,42 +34,9 @@ const Template = ({
           null
         :
           <>
-            <Card
-              header={
-                <CardTitle>
-                  <h3>{title}</h3>
-                </CardTitle>
-              }
-              body={
-                <CardBody>
-                  {content}
-                </CardBody>
-              }
-            />
-            <Card
-              header={
-                <CardTitle>
-                  <h3>{title}</h3>
-                </CardTitle>
-              }
-              body={
-                <CardBody>
-                  {content}
-                </CardBody>
-              }
-            />
-            <Card
-              header={
-                <CardTitle>
-                  <h3>{title}</h3>
-                </CardTitle>
-              }
-              body={
-                <CardBody>
-                  {content}
-                </CardBody>
-              }
-            />
+            <Card title={title} body={content} />
+            <Card title={title} body={content} />
+            <Card title={title} body={content} />
           </>
       }
       sidebar={
@@ -77,29 +45,20 @@ const Template = ({
         :
           <>
             <Card
-              header={
-                <CardTitle>
-                  <h3>{title}</h3>
-                </CardTitle>
-              }
-              body={
-                <CardBody>
-                  {content.slice(0,255)}
-                </CardBody>
-              }
+              title={title}
+              body={content.slice(0, 255)}
+              short
+              isCollapsible
+              collaseButtonTitle={title}
+              collapseButtonClassName="border-radius-100pct padding-none"
+              collapseButtonStyle={{
+                width: "2.5rem",
+                height: "2.5rem",
+              }}
+              isCollapsedValue={<MdArrowDropDown size="1.5rem" />}
+              isNotCollapsedValue={<MdArrowDropUp size="1.5rem" />}
             />
-            <Card
-              header={
-                <CardTitle>
-                  <h3>{title}</h3>
-                </CardTitle>
-              }
-              body={
-                <CardBody>
-                  {content.slice(0,255)}
-                </CardBody>
-              }
-            />
+            <Card title={title} body={content.slice(0, 255)} />
           </>
       }
     />
