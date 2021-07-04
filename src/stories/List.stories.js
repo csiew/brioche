@@ -47,6 +47,28 @@ const Template = ({
               );
             })
           }
+          <List edgeToEdge={edgeToEdge}>
+            {
+              testData.content.slice(0, 5).map(item => {
+                return (
+                  <ListItem key={item} tooltip={item}>
+                    {item.slice(0,48)}...
+                  </ListItem>
+                );
+              })
+            }
+            <List edgeToEdge={edgeToEdge}>
+              {
+                testData.content.slice(0, 5).map(item => {
+                  return (
+                    <ListItem key={item} tooltip={item}>
+                      {item.slice(0,48)}...
+                    </ListItem>
+                  );
+                })
+              }
+            </List>
+          </List>
         </List>
       </CardBody>
     </Card>

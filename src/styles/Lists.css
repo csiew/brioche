@@ -71,6 +71,22 @@
   }
 }
 
+/* Child lists */
+.list .list {
+  border-left-width: 3px;
+  border-left-style: solid;
+  border-left-color: var(--FG-COLOR-SECONDARY);
+  width: 95%;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: auto;
+  margin-right: 0;
+  padding: 0;
+}
+.list .list:hover {
+  border-left-color: var(--PRIMARY-COLOR);
+}
+
 .menu-dropdown {
   color: var(--FG-COLOR);
   background: var(--BG-COLOR);
