@@ -1,4 +1,5 @@
 import React from "react";
+import { AppContainer } from "../components/AppContainer.jsx";
 import { TextBox } from "../components/TextBox.jsx";
 
 const testData = {
@@ -39,14 +40,14 @@ const Template = ({
   type,
 }) => {
   return (
-    <div className="width-max-320">
+    <AppContainer className="width-max-480 padding-xl">
       <TextBox
         label={label}
         tooltip={tooltip}
         placeholder={placeholder}
         type={type}
       />
-    </div>
+    </AppContainer>
   );
 };
 

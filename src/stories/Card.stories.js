@@ -1,4 +1,5 @@
 import React from "react";
+import { AppContainer } from "../components/AppContainer.jsx";
 import { Card, CardTitle, CardBody } from "../components/Card.jsx";
 
 const testData = {
@@ -36,14 +37,16 @@ const Template = ({
   content,
 }) => {
   return (
-    <Card className="width-max-480">
-      <CardTitle>
-        <h2>{title}</h2>
-      </CardTitle>
-      <CardBody>
-        {content}
-      </CardBody>
-    </Card>
+    <AppContainer className="padding-xl">
+      <Card className="width-max-480">
+        <CardTitle>
+          <h2>{title}</h2>
+        </CardTitle>
+        <CardBody>
+          {content}
+        </CardBody>
+      </Card>
+    </AppContainer>
   );
 };
 
@@ -51,11 +54,13 @@ const TemplateWithoutTitle = ({
   content,
 }) => {
   return (
-    <Card className="width-max-480">
-      <CardBody>
-        {content}
-      </CardBody>
-    </Card>
+    <AppContainer className="padding-xl">
+      <Card className="width-max-480">
+        <CardBody>
+          {content}
+        </CardBody>
+      </Card>
+    </AppContainer>
   );
 };
 
@@ -64,11 +69,13 @@ const TemplateWithoutBody = ({
   noBody,
 }) => {
   return (
-    <Card className="width-max-480">
-      <CardTitle noBody={noBody}>
-        <h2>{title}</h2>
-      </CardTitle>
-    </Card>
+    <AppContainer className="padding-xl">
+      <Card className="width-max-480">
+        <CardTitle noBody={noBody}>
+          <h2>{title}</h2>
+        </CardTitle>
+      </Card>
+    </AppContainer>
   );
 };
 

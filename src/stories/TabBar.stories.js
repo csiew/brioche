@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { AppContainer } from "../components/AppContainer.jsx";
 import { TabBar, TabBarItem } from "../components/TabBar.jsx";
 
 const testData = {
@@ -28,7 +29,7 @@ const Template = () => {
   }
 
   return (
-    <div className="bg-color width-full width-max-1024 height-full padding-xl">
+    <AppContainer className="bg-color width-max-768 padding-xl">
       <TabBar>
         {
           testData.items.map(item => {
@@ -44,7 +45,7 @@ const Template = () => {
           })
         }
       </TabBar>
-    </div>
+    </AppContainer>
   );
 };
 

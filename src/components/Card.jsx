@@ -93,7 +93,7 @@ export function CardCollapseButton({
   return (
     <Button
       tooltip={isCollapsed ? `Hide ${cardName}` : `Show ${cardName}`}
-      className={className ? className : ''}
+      className={className}
       style={style}
       onClick={toggle}
       label={

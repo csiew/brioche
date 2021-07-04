@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { AppContainer } from "../components/AppContainer.jsx";
 import { Toolbar } from "../components/Toolbar.jsx";
 import { TabBar, TabBarItem } from "../components/TabBar.jsx";
 
@@ -40,24 +41,26 @@ const Template = ({
   }
 
   return (
-    <Toolbar>
-      <h2>{title}</h2>
-      <TabBar>
-        {
-          testData.items.map(item => {
-            return (
-              <TabBarItem
-                key={item}
-                onClick={() => selectValue(item)}
-                selected={selectedValue === item}
-              >
-                {item}
-              </TabBarItem>
-            );
-          })
-        }
-      </TabBar>
-    </Toolbar>
+    <AppContainer>
+      <Toolbar>
+        <h2>{title}</h2>
+        <TabBar>
+          {
+            testData.items.map(item => {
+              return (
+                <TabBarItem
+                  key={item}
+                  onClick={() => selectValue(item)}
+                  selected={selectedValue === item}
+                >
+                  {item}
+                </TabBarItem>
+              );
+            })
+          }
+        </TabBar>
+      </Toolbar>
+    </AppContainer>
   );
 }
 

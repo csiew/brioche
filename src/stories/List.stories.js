@@ -1,4 +1,5 @@
 import React from "react";
+import { AppContainer } from "../components/AppContainer.jsx";
 import { Card, CardTitle, CardBody } from "../components/Card.jsx";
 import { List, ListItem } from "../components/List.jsx";
 
@@ -32,24 +33,15 @@ const Template = ({
   edgeToEdge,
 }) => {
   return (
-    <Card className="width-max-480">
-      <CardTitle>
-        <h2>{testData.title}</h2>
-      </CardTitle>
-      <CardBody className="padding-none">
-        <List edgeToEdge={edgeToEdge}>
-          {
-            testData.content.map(item => {
-              return (
-                <ListItem key={item} tooltip={item}>
-                  {item.slice(0,48)}...
-                </ListItem>
-              );
-            })
-          }
+    <AppContainer className="padding-xl">
+      <Card className="width-max-480">
+        <CardTitle>
+          <h2>{testData.title}</h2>
+        </CardTitle>
+        <CardBody className="padding-none">
           <List edgeToEdge={edgeToEdge}>
             {
-              testData.content.slice(0, 5).map(item => {
+              testData.content.map(item => {
                 return (
                   <ListItem key={item} tooltip={item}>
                     {item.slice(0,48)}...
@@ -67,11 +59,22 @@ const Template = ({
                   );
                 })
               }
+              <List edgeToEdge={edgeToEdge}>
+                {
+                  testData.content.slice(0, 5).map(item => {
+                    return (
+                      <ListItem key={item} tooltip={item}>
+                        {item.slice(0,48)}...
+                      </ListItem>
+                    );
+                  })
+                }
+              </List>
             </List>
           </List>
-        </List>
-      </CardBody>
-    </Card>
+        </CardBody>
+      </Card>
+    </AppContainer>
   );
 };
 

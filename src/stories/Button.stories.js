@@ -1,4 +1,5 @@
 import React from "react";
+import { AppContainer } from "../components/AppContainer.jsx";
 import { Button } from "../components/Button.jsx";
 import { MdMenu } from "react-icons/md";
 
@@ -61,15 +62,17 @@ const Template = ({
   disabled,
 }) => {
   return (
-    <Button
-      style={style}
-      label={label}
-      tooltip={tooltip}
-      primary={primary}
-      iconOnly={iconOnly}
-      round={round}
-      disabled={disabled}
-    />
+    <AppContainer className="padding-xl">
+      <Button
+        style={style}
+        label={label}
+        tooltip={tooltip}
+        primary={primary}
+        iconOnly={iconOnly}
+        round={round}
+        disabled={disabled}
+      />
+    </AppContainer>
   );
 };
 

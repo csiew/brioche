@@ -1,4 +1,5 @@
 import React from "react";
+import { AppContainer } from "../components/AppContainer.jsx";
 import { PageLayout } from "../components/PageLayout.jsx";
 import { PageHeader } from "../components/PageHeader.jsx";
 import { Card } from "../components/Card.jsx";
@@ -22,51 +23,53 @@ const Template = ({
   sidebar,
 }) => {
   return (
-    <PageLayout
-      header={
-        header === null ?
-          null
-        :
-          <PageHeader title={title} isItalic={true} isTextured={false} />
-      }
-      main={
-        main === null ?
-          null
-        :
-          <>
-            <Card title={title} body={content} />
-            <Card title={title} body={content} />
-            <Card title={title} body={content} />
-          </>
-      }
-      sidebar={
-        sidebar === null ?
-          null
-        :
-          <>
-            <Card
-              title={title}
-              body={content.slice(0, 255)}
-              isCollapsible
-              collapseButtonClassName="border-radius-100pct padding-none"
-              collapseButtonStyle={{
-                width: "2.5rem",
-                height: "2.5rem",
-              }}
-              isCollapsedValue={<MdArrowDropDown size="1.5rem" />}
-              isNotCollapsedValue={<MdArrowDropUp size="1.5rem" />}
-            />
-            <Card
-              title={title}
-              body={content.slice(0, 255)}
-              isCollapsible
-              collapseButtonClassName="card-border-radius padding-xs font-scale-xs"
-              isCollapsedValue="Show"
-              isNotCollapsedValue="Hide"
-            />
-          </>
-      }
-    />
+    <AppContainer className="padding-xl">
+      <PageLayout
+        header={
+          header === null ?
+            null
+          :
+            <PageHeader title={title} isItalic={true} isTextured={false} />
+        }
+        main={
+          main === null ?
+            null
+          :
+            <>
+              <Card title={title} body={content} />
+              <Card title={title} body={content} />
+              <Card title={title} body={content} />
+            </>
+        }
+        sidebar={
+          sidebar === null ?
+            null
+          :
+            <>
+              <Card
+                title={title}
+                body={content.slice(0, 255)}
+                isCollapsible
+                collapseButtonClassName="border-radius-100pct padding-none"
+                collapseButtonStyle={{
+                  width: "2.5rem",
+                  height: "2.5rem",
+                }}
+                isCollapsedValue={<MdArrowDropDown size="1.5rem" />}
+                isNotCollapsedValue={<MdArrowDropUp size="1.5rem" />}
+              />
+              <Card
+                title={title}
+                body={content.slice(0, 255)}
+                isCollapsible
+                collapseButtonClassName="card-border-radius padding-xs font-scale-xs"
+                isCollapsedValue="Show"
+                isNotCollapsedValue="Hide"
+              />
+            </>
+        }
+      />
+    </AppContainer>
   );
 }
 
