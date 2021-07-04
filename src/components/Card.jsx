@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
 import { Button } from "./Button.jsx";
 import "../App.css";
 
@@ -15,7 +14,7 @@ export function CardCollapseButton({
   return (
     <Button
       tooltip={isCollapsed ? `Hide ${cardName}` : `Show ${cardName}`}
-      className={`border-radius-100pct padding-none ${className ? className : ''}`}
+      className={className ? className : ''}
       style={style}
       onClick={toggle}
       label={
@@ -36,7 +35,6 @@ export function Card({
   title,
   body,
   id,
-  collaseButtonTitle,
   collapseButtonClassName,
   collapseButtonStyle,
   isCollapsible,
@@ -59,7 +57,7 @@ export function Card({
                 <CardCollapseButton
                   className={collapseButtonClassName}
                   style={collapseButtonStyle}
-                  cardName={collaseButtonTitle}
+                  cardName={title}
                   isCollapsed={isCollapsed}
                   toggle={() => setIsCollapsed(!isCollapsed)}
                   isCollapsedValue={isCollapsedValue}

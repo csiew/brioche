@@ -49,7 +49,6 @@ const Template = ({
               body={content.slice(0, 255)}
               short
               isCollapsible
-              collaseButtonTitle={title}
               collapseButtonClassName="border-radius-100pct padding-none"
               collapseButtonStyle={{
                 width: "2.5rem",
@@ -58,7 +57,15 @@ const Template = ({
               isCollapsedValue={<MdArrowDropDown size="1.5rem" />}
               isNotCollapsedValue={<MdArrowDropUp size="1.5rem" />}
             />
-            <Card title={title} body={content.slice(0, 255)} />
+            <Card
+              title={title}
+              body={content.slice(0, 255)}
+              short
+              isCollapsible
+              collapseButtonClassName="card-border-radius padding-xs font-scale-xs"
+              isCollapsedValue="Show"
+              isNotCollapsedValue="Hide"
+            />
           </>
       }
     />
