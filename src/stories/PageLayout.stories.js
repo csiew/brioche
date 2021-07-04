@@ -23,7 +23,7 @@ const Template = ({
   sidebar,
 }) => {
   return (
-    <AppContainer className="padding-xl">
+    <AppContainer>
       <PageLayout
         header={
           header === null ?
