@@ -103,7 +103,7 @@ select {
 textarea {
   line-height: 1.5;
 }
-:is(input[type=text], input[type=email], input[type=password], textarea, select):hover {
+:is(input[type=text], input[type=email], input[type=password], select):hover {
   background: var(--INPUT-BG-COLOR-HOVER);
   border-color: var(--BORDER-COLOR-HOVER);
   transition: var(--TRANSITION);

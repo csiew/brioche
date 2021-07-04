@@ -12,6 +12,7 @@ export function TextAreaBox({
   onChange,
   onInput,
   onClick,
+  readOnly,
   disabled,
 }) {
   return (
@@ -26,6 +27,7 @@ export function TextAreaBox({
       onChange={onChange}
       onInput={onInput}
       onClick={onClick}
+      readOnly={readOnly ? readOnly : (onChange ? null : true)}
       disabled={disabled}
     />
   );
