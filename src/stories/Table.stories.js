@@ -41,6 +41,7 @@ const Template = ({
       <Table
         headerMap={JSON.stringify(headerMap)}
         contentMap={JSON.stringify(contentMap)}
+        stickyHeader
       />
     </AppContainer>
   );
