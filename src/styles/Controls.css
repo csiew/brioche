@@ -83,6 +83,7 @@ button, .button, input[type=submit] {
 
 input[type=text],
 input[type=email],
+input[type=password],
 select {
   color: var(--INPUT-FG-COLOR);
   background: var(--INPUT-BG-COLOR);
@@ -98,20 +99,26 @@ select {
   padding-right: 1rem;
   transition: var(--TRANSITION);
 }
-:is(input[type=text], input[type=email], select):hover {
+:is(input[type=text], input[type=email], input[type=password], select):hover {
   background: var(--INPUT-BG-COLOR-HOVER);
   border-color: var(--BORDER-COLOR-HOVER);
   transition: var(--TRANSITION);
 }
-:is(input[type=text], input[type=email], select):focus {
+:is(input[type=text], input[type=email], input[type=password], select):focus {
   background: var(--INPUT-BG-COLOR-ACTIVE);
   border-color: var(--PRIMARY-COLOR);
   transition: var(--TRANSITION);
 }
-:is(input[type=text], input[type=email], select):disabled {
+:is(input[type=text], input[type=email], input[type=password], select):disabled {
   background: var(--INPUT-BG-COLOR-DISABLED);
   border-color: var(--BORDER-COLOR);
   transition: var(--TRANSITION);
+}
+
+label {
+  color: var(--FG-COLOR-SECONDARY);
+  font-weight: 800;
+  margin-bottom: 0.5rem;
 }
 
 .tab-bar {

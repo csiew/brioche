@@ -42,6 +42,12 @@ export default {
         defaultValue: false,
       }
     },
+    disabled: {
+      control: {
+        type: "boolean",
+        defaultValue: false,
+      }
+    },
   }
 };
 
@@ -51,7 +57,8 @@ const Template = ({
   tooltip,
   primary,
   iconOnly,
-  round
+  round,
+  disabled,
 }) => {
   return (
     <Button
@@ -61,6 +68,7 @@ const Template = ({
       primary={primary}
       iconOnly={iconOnly}
       round={round}
+      disabled={disabled}
     />
   );
 };
@@ -73,6 +81,7 @@ Default.args = {
   primary: false,
   iconOnly: false,
   round: false,
+  disabled: false,
 };
 
 export const Primary = Template.bind({});
@@ -83,6 +92,7 @@ Primary.args = {
   primary: true,
   iconOnly: false,
   round: false,
+  disabled: false,
 }
 
 export const IconOnly = Template.bind({});
@@ -96,4 +106,5 @@ IconOnly.args = {
   primary: true,
   iconOnly: true,
   round: true,
+  disabled: false,
 };

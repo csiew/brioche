@@ -14,14 +14,15 @@ export function Button({
   to,
   exact,
   href,
-  openInNewTab
+  openInNewTab,
+  disabled,
 }) {
   const styleClasses = `${iconOnly ? 'button-icon-only padding-none' : ''} ${primary ? 'button-primary' : ''} ${round ? 'border-radius-100pct' : ''} ${className ? className : ''}`;
   if (to) {
     return (
       <NavLink
         title={tooltip}
-        className={styleClasses}
+        className={`${styleClasses} ${disabled ? 'disabled' : ''}`}
         style={style}
         onClick={onClick}
         to={to}
@@ -34,7 +35,7 @@ export function Button({
     return (
       <a
         title={tooltip}
-        className={styleClasses}
+        className={`${styleClasses} ${disabled ? 'disabled' : ''}`}
         style={style}
         onClick={onClick}
         href={href}
@@ -51,6 +52,7 @@ export function Button({
         className={styleClasses}
         style={style}
         onClick={onClick}
+        disabled={disabled}
       >
         {label}
       </button>
