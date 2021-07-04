@@ -2,31 +2,6 @@ import React, { useState } from "react";
 import { Button } from "./Button.jsx";
 import "../App.css";
 
-export function CardCollapseButton({
-  className,
-  style,
-  isCollapsed,
-  cardName,
-  toggle,
-  isCollapsedValue,
-  isNotCollapsedValue,
-}) {
-  return (
-    <Button
-      tooltip={isCollapsed ? `Hide ${cardName}` : `Show ${cardName}`}
-      className={className ? className : ''}
-      style={style}
-      onClick={toggle}
-      label={
-        isCollapsed ?
-          isCollapsedValue
-        :
-          isNotCollapsedValue
-      }
-    />
-  );
-}
-
 export function Card({
   className,
   headerClassName,
@@ -71,7 +46,7 @@ export function Card({
           ''
       }
       {
-        ((body !== null) && (isCollapsed === false)) ?
+        (body && isCollapsed === false) ?
           <CardBody className={bodyClassName ? bodyClassName : ''}>
             {body}
           </CardBody>
@@ -103,5 +78,30 @@ export function CardBody({
     <div className={`body width-full ${className ? className : ''}`}>
       {children}
     </div>
+  );
+}
+
+export function CardCollapseButton({
+  className,
+  style,
+  isCollapsed,
+  cardName,
+  toggle,
+  isCollapsedValue,
+  isNotCollapsedValue,
+}) {
+  return (
+    <Button
+      tooltip={isCollapsed ? `Hide ${cardName}` : `Show ${cardName}`}
+      className={className ? className : ''}
+      style={style}
+      onClick={toggle}
+      label={
+        isCollapsed ?
+          isCollapsedValue
+        :
+          isNotCollapsedValue
+      }
+    />
   );
 }
