@@ -1356,6 +1356,13 @@
     "prop-types" "^15.6.1"
     "react-lifecycles-compat" "^3.0.4"
 
+"@rollup/plugin-json@^4.1.0":
+  "integrity" "sha512-yfLbTdNS6amI/2OpmbiBoW12vngr5NW2jCJVZSBEz+H5KfUJZ2M7sDjk0U6GOOdCWFVScShte29o9NezJ53TPw=="
+  "resolved" "https://registry.npmjs.org/@rollup/plugin-json/-/plugin-json-4.1.0.tgz"
+  "version" "4.1.0"
+  dependencies:
+    "@rollup/pluginutils" "^3.0.8"
+
 "@rollup/plugin-node-resolve@^13.0.0":
   "integrity" "sha512-41X411HJ3oikIDivT5OKe9EZ6ud6DXudtfNrGbC4nniaxx2esiWjkLOzgnZsWq1IM8YIeL2rzRGLZLBjlhnZtQ=="
   "resolved" "https://registry.npmjs.org/@rollup/plugin-node-resolve/-/plugin-node-resolve-13.0.0.tgz"
@@ -1368,7 +1375,7 @@
     "is-module" "^1.0.0"
     "resolve" "^1.19.0"
 
-"@rollup/pluginutils@^3.1.0":
+"@rollup/pluginutils@^3.0.8", "@rollup/pluginutils@^3.1.0":
   "integrity" "sha512-GksZ6pr6TpIjHm8h9lSQ8pi8BE9VeubNT0OMJ3B5uZJ8pz73NPiqOtCog/x2/QzM1ENChPKxMDhiQuRHsqc+lg=="
   "resolved" "https://registry.npmjs.org/@rollup/pluginutils/-/pluginutils-3.1.0.tgz"
   "version" "3.1.0"
@@ -9078,7 +9085,7 @@
   dependencies:
     "estree-walker" "^0.6.1"
 
-"rollup@*", "rollup@^1.20.0||^2.0.0", "rollup@^2.0.0", "rollup@^2.42.0", "rollup@^2.52.4", "rollup@>=0.60.0 <3":
+"rollup@*", "rollup@^1.20.0 || ^2.0.0", "rollup@^1.20.0||^2.0.0", "rollup@^2.0.0", "rollup@^2.42.0", "rollup@^2.52.4", "rollup@>=0.60.0 <3":
   "integrity" "sha512-AXgUxxWXyGfsj8GKleR1k8KsG8G+7ZZDRU9RZb9PnLGSyTqI/1qf/+QSp1hRaR40j4yfBCKXs5khtGKiFwihfg=="
   "resolved" "https://registry.npmjs.org/rollup/-/rollup-2.52.4.tgz"
   "version" "2.52.4"
