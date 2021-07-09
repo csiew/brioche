@@ -8,6 +8,8 @@ An example of a site which uses an early version of Brioche is [my personal webs
 
 You can view the [project roadmap here](https://github.com/csiew/brioche/wiki/Roadmap).
 
+See the latest [changelog](https://github.com/csiew/brioche/wiki/Version-0.1.4) for version 0.1.4 on the wiki.
+
 
 ## Dependencies
 

@@ -4,18 +4,18 @@ import "../App.css";
 
 export function Button({
   className,
-  style,
-  onClick,
-  label,
-  tooltip,
-  primary,
-  iconOnly,
-  round,
-  to,
+  disabled,
   exact,
   href,
+  iconOnly,
+  label,
+  onClick,
   openInNewTab,
-  disabled,
+  primary,
+  round,
+  style,
+  to,
+  tooltip,
 }) {
   const styleClasses = `${iconOnly ? 'button-icon-only padding-none' : ''} ${primary ? 'button-primary' : ''} ${round ? 'border-radius-100pct' : ''} ${className ? className : ''}`;
   if (to) {

@@ -1,4 +1,4 @@
-.list-selectable {
+.list {
   width: 100%;
   height: 100%;
   display: inline-flex;
@@ -7,53 +7,95 @@
   justify-content: flex-start;
   padding: 0.5rem;
 }
-.list-selectable :is(a, .item) {
-  color: var(--NAV-MENU-FG-COLOR);
-  background: var(--NAV-MENU-BG-COLOR);
-  border-radius: var(--BORDER-RADIUS);
-  cursor: pointer;
-  width: 100%;
-  padding: 0.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  transition: var(--TRANSITION);
+.list.edge-to-edge {
+  padding: 0.5rem 0rem 0.5rem 0rem;
 }
-.list-selectable :is(a:hover, .item:hover) {
-  background: var(--NAV-MENU-BG-COLOR-HOVER);
-  transition: var(--TRANSITION);
-}
-.list-selectable :is(a:hover, .item:hover, .active, .active:hover, .item.active, .item.active:hover) {
-  text-decoration: none;
-  text-transform: none;
-  transition: var(--TRANSITION);
-}
-.list-selectable :is(a:active, .item:active) {
-  background: var(--NAV-MENU-BG-COLOR-ACTIVE);
-  transform: scale(0.99);
-  transition: var(--TRANSITION);
-}
-.list-selectable :is(.active, .item.active, .active:hover, .item.active:hover) {
-  color: var(--PRIMARY-COLOR);
-  background: var(--TERTIARY-COLOR);
-  font-weight: 700;
-}
-.list-selectable :is(.active, .item.active, .active:hover, .item.active:hover) :is(h1, h2, h3, h4) {
-  color: var(--PRIMARY-COLOR);
-}
-.list-selectable :is(.active, .item.active, .active:hover, .item.active:hover) :is(sub) {
-  font-weight: normal;
-}
-.list-selectable :is(h1, h2, h3, h4, h5) {
+.list :is(h1, h2, h3, h4, h5) {
   margin: 0;
   padding: 0;
   padding-top: 0.125rem !important;
   padding-bottom: 0.25rem !important;
 }
 
+.list :is(a, .item) {
+  color: var(--NAV-MENU-FG-COLOR);
+  background: var(--NAV-MENU-BG-COLOR);
+  border-radius: var(--BORDER-RADIUS);
+  width: 100%;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  transition: var(--TRANSITION);
+}
+.list.edge-to-edge :is(a, .item) {
+  border-bottom: none;
+  border-radius: 0;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.list.line-separated :is(a, .item) {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--BORDER-COLOR);
+}
+.list.line-separated :is(a, .item):last-child {
+  border-bottom: none !important;
+}
+.list :is(a) {
+  cursor: pointer;
+}
+.list :is(a:hover, .item:hover) {
+  background: var(--NAV-MENU-BG-COLOR-HOVER);
+  transition: var(--TRANSITION);
+}
+.list :is(a:hover, .item:hover, .active, .active:hover, .item.active, .item.active:hover) {
+  text-decoration: none;
+  text-transform: none;
+  transition: var(--TRANSITION);
+}
+.list :is(a:active, .item:active) {
+  background: var(--NAV-MENU-BG-COLOR-ACTIVE);
+  transform: scale(0.99);
+  transition: var(--TRANSITION);
+}
+.list.edge-to-edge :is(a:active, .item:active) {
+  transform: scale(1);
+}
+.list :is(.active, .item.active, .active:hover, .item.active:hover) {
+  color: var(--PRIMARY-COLOR);
+  background: var(--TERTIARY-COLOR);
+  font-weight: 700;
+}
+.list :is(.active, .item.active, .active:hover, .item.active:hover) :is(h1, h2, h3, h4) {
+  color: var(--PRIMARY-COLOR);
+}
+.list :is(.active, .item.active, .active:hover, .item.active:hover) :is(sub) {
+  font-weight: normal;
+}
+
+/* Child lists */
+.list .list {
+  border-left-width: 3px;
+  border-left-style: solid;
+  border-left-color: var(--FG-COLOR-SECONDARY);
+  width: 97%;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: auto;
+  margin-right: 0;
+  padding: 0;
+  padding-left: 0.5rem;
+}
+.list.list.edge-to-edge .list {
+  width: 95%;
+  padding: 0;
+}
+.list .list:hover {
+  border-left-color: var(--PRIMARY-COLOR);
+}
+
 @media (prefers-color-scheme: dark) {
-  .list-selectable a:hover,
-  .list-selectable .active,
-  .list-selectable .active:hover {
+  .list :is(a:hover, .active, .active:hover) {
     color: var(--PRIMARY-COLOR);
     background: var(--BG-COLOR);
   }
@@ -94,7 +136,7 @@
     overflow-y: auto;
     animation: fade-transition ease 0.25s !important;
   }
-  .list-selectable {
+  .list {
     height: auto;
     margin: auto;
   }
