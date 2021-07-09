@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Card, CardBody, CardTitle } from "./Card.jsx";
 import { List, ListItem } from "./List.jsx";
+import { MdCheck } from "react-icons/md";
 import "../App.css";
 
 export function Table({
@@ -10,13 +11,6 @@ export function Table({
   contentMap,
   stickyHeader,
 }) {
-  useEffect(() => {
-    console.log(JSON.parse(headerMap));
-    JSON.parse(contentMap).forEach(entry => {
-      console.log(Object.values(entry));
-    });
-  }, []);
-
   return (
     <Card noBody className={`position-sticky anchor-top ${className ? className : ''}`} style={style}>
       <CardTitle className={`position-sticky anchor-top padding-none bg-as-fg-color bg-color-accent-primary card-border-top-radius font-weight-700 ${stickyHeader ? 'position-sticky anchor-top' : ''}`}>
@@ -38,6 +32,9 @@ export function Table({
             JSON.parse(contentMap).map(entry => {
               return (
                 <ListItem className="grid grid-auto-flow-column padding-none">
+                  <span style={{ width: 0 }}>
+                    <MdCheck size="1.5rem" />
+                  </span>
                   {
                     Object.values(entry).map(value => {
                       return (
