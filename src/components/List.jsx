@@ -6,9 +6,10 @@ export function List({
   className,
   children,
   edgeToEdge,
+  lineSeparated,
 }) {
   return (
-    <div className={`list ${edgeToEdge ? 'edge-to-edge' : ''} ${className ? className : ''}`}>
+    <div className={`list ${edgeToEdge ? 'edge-to-edge' : ''} ${lineSeparated ? 'line-separated' : ''} ${className ? className : ''}`}>
       {children}
     </div>
   );

@@ -31,6 +31,7 @@ export default {
 
 const Template = ({
   edgeToEdge,
+  lineSeparated,
 }) => {
   return (
     <AppContainer className="padding-xl">
@@ -39,7 +40,7 @@ const Template = ({
           <h2>{testData.title}</h2>
         </CardTitle>
         <CardBody className="padding-none">
-          <List edgeToEdge={edgeToEdge}>
+          <List edgeToEdge={edgeToEdge} lineSeparated={lineSeparated}>
             {
               testData.content.map(item => {
                 return (
@@ -49,7 +50,7 @@ const Template = ({
                 );
               })
             }
-            <List edgeToEdge={edgeToEdge}>
+            <List edgeToEdge={edgeToEdge} lineSeparated={lineSeparated}>
               {
                 testData.content.slice(0, 5).map(item => {
                   return (
@@ -59,7 +60,7 @@ const Template = ({
                   );
                 })
               }
-              <List edgeToEdge={edgeToEdge}>
+              <List edgeToEdge={edgeToEdge} lineSeparated={lineSeparated}>
                 {
                   testData.content.slice(0, 5).map(item => {
                     return (
@@ -81,9 +82,17 @@ const Template = ({
 export const Default = Template.bind({});
 Default.args = {
   edgeToEdge: false,
+  lineSeparated: false,
 }
 
 export const EdgeToEdge = Template.bind({});
 EdgeToEdge.args = {
   edgeToEdge: true,
+  lineSeparated: false,
+}
+
+export const LineSeparated = Template.bind({});
+LineSeparated.args = {
+  edgeToEdge: true,
+  lineSeparated: true,
 }

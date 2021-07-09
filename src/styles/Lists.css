@@ -28,9 +28,18 @@
   transition: var(--TRANSITION);
 }
 .list.edge-to-edge :is(a, .item) {
+  border-bottom: none;
   border-radius: 0;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+.list.line-separated :is(a, .item) {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--BORDER-COLOR);
+}
+.list.line-separated :is(a, .item):last-child {
+  border-bottom: none !important;
 }
 .list :is(a) {
   cursor: pointer;

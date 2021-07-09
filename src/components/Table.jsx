@@ -1,7 +1,6 @@
 import React from "react";
 import { Card, CardBody, CardTitle } from "./Card.jsx";
 import { List, ListItem } from "./List.jsx";
-import { MdCheck } from "react-icons/md";
 import "../App.css";
 
 export function Table({
@@ -9,6 +8,7 @@ export function Table({
   style,
   headerMap,
   contentMap,
+  contentReducer,
   stickyHeader,
 }) {
   return (
@@ -17,31 +17,32 @@ export function Table({
         <div className="width-full grid grid-auto-flow-column">
           {
             Object.entries(JSON.parse(headerMap)).map(keyMap => {
-              return (
-                <span key={`header-${keyMap[0]}`} className="padding-xs padding-s-left padding-s-right">
-                  {keyMap[1]}
-                </span>
-              );
+              if (!keyMap[1].hidden) {
+                return (
+                  <span key={`header-${keyMap[0]}`} className="padding-xs padding-s-left padding-s-right">
+                    {keyMap[1].name}
+                  </span>
+                );
+              }
             })
           }
         </div>
       </CardTitle>
       <CardBody className="grid grid-col-1 padding-none">
-        <List edgeToEdge className="padding-none-top padding-xs-bottom">
+        <List edgeToEdge lineSeparated className="padding-none-top padding-xs-bottom">
           {
             JSON.parse(contentMap).map(entry => {
               return (
                 <ListItem className="grid grid-auto-flow-column padding-none">
-                  <span style={{ width: 0 }}>
-                    <MdCheck size="1.5rem" />
-                  </span>
                   {
-                    Object.values(entry).map(value => {
-                      return (
-                        <span className="padding-xs padding-s-left padding-s-right">
-                          {value}
-                        </span>
-                      );
+                    Object.entries(contentReducer ? contentReducer(entry) : entry).map(contentEntry => {
+                      if (!JSON.parse(headerMap)[contentEntry[0]].hidden) {
+                        return (
+                          <span className="padding-xs padding-s-left padding-s-right">
+                            {contentEntry[1]}
+                          </span>
+                        );
+                      }
                     })
                   }
                 </ListItem>
