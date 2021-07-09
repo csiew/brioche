@@ -1,5 +1,6 @@
 import React from "react";
-import { PageHeader } from "../../components/surfaces/PageHeader.jsx";
+import { AppContainer } from "../components/AppContainer.jsx";
+import { PageHeader } from "../components/PageHeader.jsx";
 
 const testData = {
   title: "Lorem ipsum",
@@ -36,11 +37,13 @@ const Template = ({
   isItalic,
 }) => {
   return (
-    <PageHeader
-      title={title}
-      isTextured={isTextured}
-      isItalic={isItalic}
-    />
+    <AppContainer className="padding-xl">
+      <PageHeader
+        title={title}
+        isTextured={isTextured}
+        isItalic={isItalic}
+      />
+    </AppContainer>
   );
 }
 

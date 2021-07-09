@@ -1,19 +1,21 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "../../App.css";
+import "../App.css";
 
-export function SelectableList({
+export function List({
   className,
-  children
+  children,
+  edgeToEdge,
+  lineSeparated,
 }) {
   return (
-    <div className={`list-selectable ${className ? className : ''}`}>
+    <div className={`list ${edgeToEdge ? 'edge-to-edge' : ''} ${lineSeparated ? 'line-separated' : ''} ${className ? className : ''}`}>
       {children}
     </div>
   );
 }
 
-export function SelectableListItem({
+export function ListItem({
   className,
   children,
   onClick,
@@ -29,6 +31,7 @@ export function SelectableListItem({
       <NavLink
         title={tooltip}
         className={`item ${selected ? 'active' : ''} ${className ? className : ''}`}
+        onClick={onClick}
         to={to}
         exact={exact}
       >
@@ -39,10 +42,11 @@ export function SelectableListItem({
     return (
       <a
         title={tooltip}
+        className={`item ${className ? className : ''}`}
+        onClick={onClick}
         href={href}
         target={openInNewTab ? '_blank' : ''}
         rel="noreferrer"
-        className={`item ${className ? className : ''}`}
       >
         {children}
       </a>

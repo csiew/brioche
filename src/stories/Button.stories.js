@@ -1,5 +1,6 @@
 import React from "react";
-import { Button } from "../../components/controls/Button.jsx";
+import { AppContainer } from "../components/AppContainer.jsx";
+import { Button } from "../components/Button.jsx";
 import { MdMenu } from "react-icons/md";
 
 const testData = {
@@ -42,6 +43,12 @@ export default {
         defaultValue: false,
       }
     },
+    disabled: {
+      control: {
+        type: "boolean",
+        defaultValue: false,
+      }
+    },
   }
 };
 
@@ -51,17 +58,21 @@ const Template = ({
   tooltip,
   primary,
   iconOnly,
-  round
+  round,
+  disabled,
 }) => {
   return (
-    <Button
-      style={style}
-      label={label}
-      tooltip={tooltip}
-      primary={primary}
-      iconOnly={iconOnly}
-      round={round}
-    />
+    <AppContainer className="padding-xl">
+      <Button
+        style={style}
+        label={label}
+        tooltip={tooltip}
+        primary={primary}
+        iconOnly={iconOnly}
+        round={round}
+        disabled={disabled}
+      />
+    </AppContainer>
   );
 };
 
@@ -73,6 +84,7 @@ Default.args = {
   primary: false,
   iconOnly: false,
   round: false,
+  disabled: false,
 };
 
 export const Primary = Template.bind({});
@@ -83,6 +95,7 @@ Primary.args = {
   primary: true,
   iconOnly: false,
   round: false,
+  disabled: false,
 }
 
 export const IconOnly = Template.bind({});
@@ -96,4 +109,5 @@ IconOnly.args = {
   primary: true,
   iconOnly: true,
   round: true,
+  disabled: false,
 };

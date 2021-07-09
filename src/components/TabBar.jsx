@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "../../App.css";
+import "../App.css";
 
 export function TabBar({
   className,
@@ -24,13 +24,15 @@ export function TabBarItem({
   href,
   openInNewTab,
 }) {
+  const styleClasses = `item text-align-center cursor-pointer noselect ${selected ? 'active' : ''} ${className ? className : ''}`;
   if (to) {
     return (
       <NavLink
         title={tooltip}
+        className={styleClasses}
+        onClick={onClick}
         to={to}
         exact={exact}
-        className={`item text-align-center cursor-pointer noselect ${selected ? 'active' : ''} ${className ? className : ''}`}
       >
         {children}
       </NavLink>
@@ -39,10 +41,11 @@ export function TabBarItem({
     return (
       <a
         title={tooltip}
+        className={styleClasses}
+        onClick={onClick}
         href={href}
         target={openInNewTab ? '_blank' : ''}
         rel="noreferrer"
-        className={`item text-align-center cursor-pointer noselect ${selected ? 'active' : ''} ${className ? className : ''}`}
       >
         {children}
       </a>
@@ -51,7 +54,7 @@ export function TabBarItem({
     return (
       <div
         title={tooltip}
-        className={`item text-align-center cursor-pointer noselect ${selected ? 'active' : ''} ${className ? className : ''}`}
+        className={styleClasses}
         onClick={onClick}
       >
         {children}

@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { Toolbar } from "../../components/surfaces/Toolbar.jsx";
-import { TabBar, TabBarItem } from "../../components/controls/TabBar.jsx";
+import { AppContainer } from "../components/AppContainer.jsx";
+import { TabBar, TabBarItem } from "../components/TabBar.jsx";
 
 const testData = {
-  title: "Lorem ipsum",
   items: [
     "One",
     "Two",
@@ -14,21 +13,11 @@ const testData = {
 };
 
 export default {
-  component: Toolbar,
-  title: "Toolbar",
-  argTypes: {
-    title: {
-      control: {
-        type: "text",
-        defaultValue: "Hello World"
-      },
-    },
-  }
+  title: "Tab Bar",
+  component: TabBar,
 };
 
-const Template = ({
-  title,
-}) => {
+const Template = () => {
   const [selectedValue, setSelectedValue] = useState("One");
   
   const selectValue = (value) => {
@@ -40,8 +29,7 @@ const Template = ({
   }
 
   return (
-    <Toolbar>
-      <h2>{title}</h2>
+    <AppContainer className="bg-color width-max-768 padding-xl">
       <TabBar>
         {
           testData.items.map(item => {
@@ -57,11 +45,8 @@ const Template = ({
           })
         }
       </TabBar>
-    </Toolbar>
+    </AppContainer>
   );
-}
+};
 
 export const Default = Template.bind({});
-Default.args = {
-   title: testData.title,
-};
