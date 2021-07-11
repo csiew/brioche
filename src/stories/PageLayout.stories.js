@@ -13,6 +13,14 @@ const testData = {
 export default {
   title: "Page Layout",
   component: PageLayout,
+  argTypes: {
+    isArticleView: {
+      control: {
+        type: "boolean",
+        defaultValue: false
+      },
+    },
+  }
 };
 
 const Template = ({
@@ -21,6 +29,7 @@ const Template = ({
   header,
   main,
   sidebar,
+  isArticleView,
 }) => {
   return (
     <AppContainer>
@@ -68,6 +77,7 @@ const Template = ({
               />
             </>
         }
+        isArticleView={isArticleView}
       />
     </AppContainer>
   );
