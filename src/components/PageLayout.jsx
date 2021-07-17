@@ -44,9 +44,10 @@ export function PageLayout({
   header,
   main,
   sidebar,
+  isArticleView,
 }) {
   return (
-    <div className={`width-full margin-auto-horizontal grid grid-col-1 ${className ? className : ''}`}>
+    <div className={`width-full margin-auto-horizontal grid grid-col-1 ${isArticleView ? 'bg-color-primary' : ''} ${className ? className : ''}`}>
       {header}
       <PageLayoutBody
         mainClassName={mainClassName}

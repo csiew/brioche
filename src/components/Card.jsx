@@ -15,13 +15,14 @@ export function Card({
   isCollapsible,
   isCollapsedValue,
   isNotCollapsedValue,
+  noStyle,
 }) {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   return (
     <div
       id={id}
-      className={`card width-full ${className ? className : ''}`}
+      className={`card width-full ${noStyle ? 'no-style' : ''} ${className ? className : ''}`}
     >
       {
         title ?

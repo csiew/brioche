@@ -13,6 +13,14 @@ const testData = {
 export default {
   title: "Page Layout",
   component: PageLayout,
+  argTypes: {
+    isArticleView: {
+      control: {
+        type: "boolean",
+        defaultValue: false
+      },
+    },
+  }
 };
 
 const Template = ({
@@ -21,6 +29,7 @@ const Template = ({
   header,
   main,
   sidebar,
+  isArticleView,
 }) => {
   return (
     <AppContainer>
@@ -68,6 +77,57 @@ const Template = ({
               />
             </>
         }
+        isArticleView={isArticleView}
+      />
+    </AppContainer>
+  );
+}
+
+const ArticleTemplate = ({
+  title,
+  content,
+  isArticleView,
+}) => {
+  return (
+    <AppContainer>
+      <PageLayout
+        header={
+          <PageHeader title={title} isItalic={true} isTextured={false} />
+        }
+        main={
+          <>
+            <Card title={title} body={content} noStyle />
+            <Card title={title} body={content} noStyle />
+            <Card title={title} body={content} noStyle />
+          </>
+        }
+        sidebar={
+          <>
+            <Card
+              title={title}
+              body={content.slice(0, 255)}
+              isCollapsible
+              collapseButtonClassName="border-radius-100pct padding-none"
+              collapseButtonStyle={{
+                width: "2.5rem",
+                height: "2.5rem",
+              }}
+              isCollapsedValue={<MdArrowDropDown size="1.5rem" />}
+              isNotCollapsedValue={<MdArrowDropUp size="1.5rem" />}
+              noStyle
+            />
+            <Card
+              title={title}
+              body={content.slice(0, 255)}
+              isCollapsible
+              collapseButtonClassName="card-border-radius padding-xs font-scale-xs"
+              isCollapsedValue="Show"
+              isNotCollapsedValue="Hide"
+              noStyle
+            />
+          </>
+        }
+        isArticleView={isArticleView}
       />
     </AppContainer>
   );
@@ -98,4 +158,11 @@ WithoutMainContent.args = {
   title: testData.title,
   content: testData.content,
   main: null,
+};
+
+export const ArticleMode = ArticleTemplate.bind({});
+ArticleMode.args = {
+  title: testData.title,
+  content: testData.content,
+  isArticleView: true,
 };

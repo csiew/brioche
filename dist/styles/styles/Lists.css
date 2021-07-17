@@ -8,7 +8,7 @@
   padding: 0.5rem;
 }
 .list.edge-to-edge {
-  padding: 0.5rem 0rem 0.5rem 0rem;
+  padding: 0rem 0rem 0.5rem 0rem;
 }
 .list :is(h1, h2, h3, h4, h5) {
   margin: 0;
