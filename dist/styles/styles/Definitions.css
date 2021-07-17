@@ -1,9 +1,0 @@
-:root {
-  --FONT-SIZE: 1.0625rem;
-  --BORDER-RADIUS: 8px;
-  --BUTTON-BORDER-RADIUS: 32px;
-  --BASE-FONT-FAMILY: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  --HEADER-FONT-FAMILY: var(--BASE-FONT-FAMILY);
-  --ARTICLE-FONT-FAMILY: 'Source Serif Pro', var(--BASE-FONT-FAMILY);
-  --MONOSPACE-FONT-FAMILY: 'Source Code Pro', 'Roboto Mono', 'Go Mono', 'Monaco', 'Menlo', 'Consolas', monospace;
-}
