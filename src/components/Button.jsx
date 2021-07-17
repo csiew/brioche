@@ -6,6 +6,7 @@ export function Button({
   className,
   disabled,
   exact,
+  hollow,
   href,
   iconOnly,
   label,
@@ -17,7 +18,7 @@ export function Button({
   to,
   tooltip,
 }) {
-  const styleClasses = `${iconOnly ? 'button-icon-only padding-none' : ''} ${primary ? 'button-primary' : ''} ${round ? 'border-radius-100pct' : ''} ${className ? className : ''}`;
+  const styleClasses = `${iconOnly ? 'button-icon-only padding-none' : ''} ${primary ? 'button-primary' : ''} ${hollow ? 'button-hollow' : ''} ${round ? 'border-radius-100pct' : ''} ${className ? className : ''}`;
   if (to) {
     return (
       <NavLink

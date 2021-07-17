@@ -85,6 +85,7 @@
   margin-right: 0;
   padding: 0;
   padding-left: 0.5rem;
+  transition: var(--TRANSITION);
 }
 .list.list.edge-to-edge .list {
   width: 95%;
@@ -92,6 +93,7 @@
 }
 .list .list:hover {
   border-left-color: var(--PRIMARY-COLOR);
+  transition: var(--TRANSITION);
 }
 
 @media (prefers-color-scheme: dark) {

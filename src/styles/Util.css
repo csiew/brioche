@@ -493,8 +493,11 @@ word-break: break-word !important;
   transition: 0.2s;
 }
 
-.base-font-family { font-family: var(--BASE-FONT-FAMILY); }
-.header-font-family { font-family: var(--HEADER-FONT-FAMILY); }
+.font-family-sans { font-family: var(--SANS-FONT-FAMILY) !important; }
+.font-family-serif { font-family: var(--SERIF-FONT-FAMILY) !important; }
+.font-family-monospace { font-family: var(--MONOSPACE-FONT-FAMILY) !important; }
+.font-family-base { font-family: var(--BASE-FONT-FAMILY) !important; }
+.font-family-header { font-family: var(--HEADER-FONT-FAMILY) !important; }
 
 .invert {
   filter: invert(0) !important;

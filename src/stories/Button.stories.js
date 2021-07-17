@@ -31,6 +31,12 @@ export default {
         defaultValue: false,
       }
     },
+    hollow: {
+      control: {
+        type: "boolean",
+        defaultValue: false,
+      }
+    },
     iconOnly: {
       control: {
         type: "boolean",
@@ -57,6 +63,7 @@ const Template = ({
   label,
   tooltip,
   primary,
+  hollow,
   iconOnly,
   round,
   disabled,
@@ -68,6 +75,7 @@ const Template = ({
         label={label}
         tooltip={tooltip}
         primary={primary}
+        hollow={hollow}
         iconOnly={iconOnly}
         round={round}
         disabled={disabled}
@@ -82,6 +90,7 @@ Default.args = {
   label: testData.label,
   tooltip: testData.tooltip,
   primary: false,
+  hollow: false,
   iconOnly: false,
   round: false,
   disabled: false,
@@ -93,10 +102,23 @@ Primary.args = {
   label: testData.label,
   tooltip: testData.tooltip,
   primary: true,
+  hollow: false,
   iconOnly: false,
   round: false,
   disabled: false,
 }
+
+export const Hollow = Template.bind({});
+Hollow.args = {
+  style: null,
+  label: testData.label,
+  tooltip: testData.tooltip,
+  primary: false,
+  hollow: true,
+  iconOnly: false,
+  round: false,
+  disabled: false,
+};
 
 export const IconOnly = Template.bind({});
 IconOnly.args = {
@@ -107,6 +129,7 @@ IconOnly.args = {
   label: <MdMenu size="1.5rem" />,
   tooltip: testData.tooltip,
   primary: true,
+  hollow: false,
   iconOnly: true,
   round: true,
   disabled: false,
