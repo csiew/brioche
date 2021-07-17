@@ -5,6 +5,7 @@ button, .button, input[type=submit] {
   border-style: solid;
   border-color: var(--BUTTON-BG-COLOR);
   border-radius: var(--BUTTON-BORDER-RADIUS);
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.25);
   font-size: inherit;
   font-family: inherit;
   font-weight: 600;
@@ -25,12 +26,14 @@ button, .button, input[type=submit] {
   color: var(--BUTTON-FG-COLOR);
   background: var(--BUTTON-BG-COLOR-HOVER);
   border-color: var(--BUTTON-BG-COLOR-HOVER);
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.5);
   text-decoration: none;
   transition: var(--TRANSITION);
 }
 :is(button, .button, input[type=submit]):hover:active {
   background: var(--BUTTON-BG-COLOR-ACTIVE);
   border-color: var(--BUTTON-BG-COLOR-ACTIVE);
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.5);
   transform: scale(0.98);
   transition: var(--TRANSITION);
 }
@@ -111,6 +114,7 @@ textarea {
 :is(input[type=text], input[type=email], input[type=password], textarea, select):focus {
   background: var(--INPUT-BG-COLOR-ACTIVE);
   border-color: var(--PRIMARY-COLOR);
+  outline: none;
   transition: var(--TRANSITION);
 }
 :is(input[type=text], input[type=email], input[type=password], textarea, select):disabled {
@@ -118,10 +122,16 @@ textarea {
   border-color: var(--BORDER-COLOR);
   transition: var(--TRANSITION);
 }
+input[type=password] {
+  font-family: var(--MONOSPACE-FONT-FAMILY);
+}
+input[type=password]::placeholder {
+  font-family: var(--BASE-FONT-FAMILY);
+}
 
 label {
   color: var(--FG-COLOR-SECONDARY);
-  font-weight: 800;
+  font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
