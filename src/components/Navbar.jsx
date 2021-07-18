@@ -1,6 +1,7 @@
 import React from "react";
 import { Toolbar } from "./Toolbar";
 import "../App.css";
+import { HStack } from "../layouts/HStack";
 
 export function Navbar({
   className,
@@ -14,9 +15,9 @@ export function Navbar({
       className={`justify-space-between ${className ? className : ''}`}
       style={style}
     >
-      <div>{left}</div>
-      <div>{center}</div>
-      <div>{right}</div>
+      <HStack>{left}</HStack>
+      <HStack>{center}</HStack>
+      <HStack>{right}</HStack>
     </Toolbar>
   );
 }

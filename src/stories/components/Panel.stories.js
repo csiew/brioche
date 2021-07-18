@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import { AppContainer } from "../../components/AppContainer.jsx";
 import { Card } from "../../components/Card.jsx";
+import { Panel } from "../../components/Panel.jsx";
 import { PageLayout } from "../../components/PageLayout.jsx";
 import { PageHeader } from "../../components/PageHeader.jsx";
 import { Navbar } from "../../components/Navbar.jsx";
 import { TabBar, TabBarItem } from "../../components/TabBar.jsx";
 import { VStack } from "../../layouts/VStack.jsx";
+import { MdMenu } from "react-icons/md";
+import { Button } from "../../components/Button.jsx";
+import { HStack } from "../../layouts/HStack.jsx";
+import { List, ListItem } from "../../components/List.jsx";
 
 const testData = {
   title: "Lorem ipsum",
@@ -20,8 +25,8 @@ const testData = {
 };
 
 export default {
-  component: AppContainer,
-  title: "App Container",
+  component: Panel,
+  title: "Panel",
 };
 
 const Template = ({
@@ -30,6 +35,7 @@ const Template = ({
   items,
   styleOverride,
 }) => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [selectedValue, setSelectedValue] = useState("One");
   
   const selectValue = (value) => {
@@ -45,7 +51,21 @@ const Template = ({
       <VStack className="overflow-hidden" align="stretch" justify="top" fullHeight={true}>
         <Navbar
           left={
-            <h1>{title}</h1>
+            <>
+              <Button
+                className="margin-s-right padding-none"
+                style={{
+                  width: "2.5rem",
+                  height: "2.5rem",
+                }}
+                tooltip="Toggle sidebar panel"
+                label={<MdMenu size="1.5rem" />}
+                onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+                round
+                selected={isSidebarOpen}
+              />
+              <h1>{title}</h1>
+            </>
           }
           right={
             <TabBar>
@@ -66,19 +86,39 @@ const Template = ({
           }
         >
         </Navbar>
-        <PageLayout
+        <HStack
           className="overflow-auto"
-          header={
-            <PageHeader title={title} isItalic={false} isTextured={false} />
+          align="top"
+          justify="stretch"
+          fullWidth={true}
+          fullHeight={true}
+        >
+          {
+            isSidebarOpen ?
+              <Panel className="position-sticky anchor-top margin-none-top width-full width-max-240 height-full overflow-y-auto">
+                <List>
+                  <ListItem>Hello World</ListItem>
+                  <ListItem>Hello World</ListItem>
+                  <ListItem>Hello World</ListItem>
+                </List>
+              </Panel>
+            :
+              ''
           }
-          main={
-            <>
-              <Card title={title} body={content} />
-              <Card title={title} body={content} />
-              <Card title={title} body={content} />
-            </>
-          }
-        />
+          <PageLayout
+            className="overflow-auto"
+            header={
+              <PageHeader title={title} isItalic={false} isTextured={false} />
+            }
+            main={
+              <>
+                <Card title={title} body={content} />
+                <Card title={title} body={content} />
+                <Card title={title} body={content} />
+              </>
+            }
+          />
+        </HStack>
       </VStack>
     </AppContainer>
   );

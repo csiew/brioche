@@ -361,7 +361,6 @@
   display: inline-flex;
   flex-flow: row;
   justify-content: stretch;
-  width: 100%;
   margin: 0;
   padding: 0;
 }
@@ -419,8 +418,6 @@
   flex-flow: column;
   align-items: stretch;
   justify-content: flex-start;
-  width: 100%;
-  height: auto;
   margin: 0;
   padding: 0;
 }
