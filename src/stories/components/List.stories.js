@@ -1,7 +1,7 @@
 import React from "react";
-import { AppContainer } from "../components/AppContainer.jsx";
-import { Card, CardTitle, CardBody } from "../components/Card.jsx";
-import { List, ListItem } from "../components/List.jsx";
+import { AppContainer } from "../../components/AppContainer.jsx";
+import { Card, CardTitle, CardBody } from "../../components/Card.jsx";
+import { List, ListItem } from "../../components/List.jsx";
 
 const testData = {
   title: "Lorem ipsum",

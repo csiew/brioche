@@ -1,6 +1,7 @@
 import React from "react";
-import { AppContainer } from "../components/AppContainer.jsx";
-import { Button } from "../components/Button.jsx";
+import { AppContainer } from "../../components/AppContainer.jsx";
+import { Button } from "../../components/Button.jsx";
+import { Card, CardBody } from "../../components/Card.jsx";
 import { MdMenu } from "react-icons/md";
 
 const testData = {
@@ -70,16 +71,20 @@ const Template = ({
 }) => {
   return (
     <AppContainer className="padding-xl">
-      <Button
-        style={style}
-        label={label}
-        tooltip={tooltip}
-        primary={primary}
-        hollow={hollow}
-        iconOnly={iconOnly}
-        round={round}
-        disabled={disabled}
-      />
+      <Card className="width-max-600 height-min-320">
+        <CardBody>
+          <Button
+            style={style}
+            label={label}
+            tooltip={tooltip}
+            primary={primary}
+            hollow={hollow}
+            iconOnly={iconOnly}
+            round={round}
+            disabled={disabled}
+          />
+        </CardBody>
+      </Card>
     </AppContainer>
   );
 };

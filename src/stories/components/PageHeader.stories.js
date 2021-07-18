@@ -1,6 +1,6 @@
 import React from "react";
-import { AppContainer } from "../components/AppContainer.jsx";
-import { PageHeader } from "../components/PageHeader.jsx";
+import { AppContainer } from "../../components/AppContainer.jsx";
+import { PageHeader } from "../../components/PageHeader.jsx";
 
 const testData = {
   title: "Lorem ipsum",

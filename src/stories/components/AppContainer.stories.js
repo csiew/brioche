@@ -1,8 +1,8 @@
 import React from "react";
-import { AppContainer } from "../components/AppContainer.jsx";
-import { PageLayout } from "../components/PageLayout.jsx";
-import { PageHeader } from "../components/PageHeader.jsx";
-import { Card } from "../components/Card.jsx";
+import { AppContainer } from "../../components/AppContainer.jsx";
+import { PageLayout } from "../../components/PageLayout.jsx";
+import { PageHeader } from "../../components/PageHeader.jsx";
+import { Card } from "../../components/Card.jsx";
 
 const testData = {
   title: "Lorem ipsum",
@@ -23,7 +23,7 @@ const Template = ({
     <AppContainer styleOverride={styleOverride}>
       <PageLayout
         header={
-          <PageHeader title={title} isItalic={true} isTextured={false} />
+          <PageHeader title={title} isItalic={false} isTextured={false} />
         }
         main={
           <>

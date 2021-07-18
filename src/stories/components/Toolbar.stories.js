@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { AppContainer } from "../components/AppContainer.jsx";
-import { Toolbar } from "../components/Toolbar.jsx";
-import { TabBar, TabBarItem } from "../components/TabBar.jsx";
+import { AppContainer } from "../../components/AppContainer.jsx";
+import { Toolbar } from "../../components/Toolbar.jsx";
+import { TabBar, TabBarItem } from "../../components/TabBar.jsx";
 
 const testData = {
   title: "Lorem ipsum",

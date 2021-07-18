@@ -1,6 +1,6 @@
 import React from "react";
-import { AppContainer } from "../components/AppContainer.jsx";
-import { TextAreaBox } from "../components/TextAreaBox.jsx";
+import { AppContainer } from "../../components/AppContainer.jsx";
+import { TextAreaBox } from "../../components/TextAreaBox.jsx";
 
 const testData = {
   tooltip: "Lorem ipsum",

@@ -8,7 +8,7 @@ An example of a site which uses an early version of Brioche is [my personal webs
 
 You can view the [project roadmap here](https://github.com/csiew/brioche/wiki/Roadmap).
 
-See the latest [changelog](https://github.com/csiew/brioche/wiki/Version-0.1.4) for version 0.1.4 on the wiki.
+See the latest [changelog](https://github.com/csiew/brioche/wiki/Version-0.1.5) for version 0.1.5 on the wiki.
 
 
 ## Dependencies
@@ -62,6 +62,8 @@ reportWebVitals();
 3. Import `AppContainer` into `App.js`. Replace the root element with it. It is recommended to encapsulate all page content within `main` tags, and place the `Switch` and `Route` components (from `react-router-dom`) within it. For example:
 
 ```js
+import { AppContainer } from 'brioche';
+
 function App() {
   return (
     <AppContainer>

@@ -1,6 +1,6 @@
 import React from "react";
-import { AppContainer } from "../components/AppContainer.jsx";
-import { Table } from "../components/Table.jsx";
+import { AppContainer } from "../../components/AppContainer.jsx";
+import { Table } from "../../components/Table.jsx";
 
 const testData = {
   headerMap: {

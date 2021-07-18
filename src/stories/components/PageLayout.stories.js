@@ -1,8 +1,8 @@
 import React from "react";
-import { AppContainer } from "../components/AppContainer.jsx";
-import { PageLayout } from "../components/PageLayout.jsx";
-import { PageHeader } from "../components/PageHeader.jsx";
-import { Card } from "../components/Card.jsx";
+import { AppContainer } from "../../components/AppContainer.jsx";
+import { PageLayout } from "../../components/PageLayout.jsx";
+import { PageHeader } from "../../components/PageHeader.jsx";
+import { Card } from "../../components/Card.jsx";
 import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
 
 const testData = {
