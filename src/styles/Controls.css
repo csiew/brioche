@@ -211,12 +211,13 @@ label {
 
 .toggle-switch {
   color: var(--FG-COLOR);
-  background: var(--FG-COLOR-SECONDARY);
+  background: var(--BG-COLOR-SECONDARY);
   border-width: 1px;
   border-style: solid;
   border-color: var(--BORDER-COLOR);
   border-radius: var(--BUTTON-BORDER-RADIUS);
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.25) inset;
+  box-shadow: 0px 1px 4px rgba(0,0,0,0.25) inset;
+  cursor: pointer;
   width: 3rem;
   height: auto;
   margin: 0;
@@ -232,17 +233,13 @@ label {
 .toggle-switch:hover {
   background: var(--PRIMARY-COLOR);
   border-color: var(--BORDER-COLOR-HOVER);
+  box-shadow: 0px 1px 4px rgba(0,0,0,0.5) inset;
   transition: var(--TRANSITION);
 }
 .toggle-switch.active {
   background: #40a140;
   justify-content: flex-end;
   transition: var(--TRANSITION);
-}
-.toggle-switch.disabled,
-.toggle-switch.disabled:hover {
-  background: var(--BG-COLOR);
-  border-color: var(--BORDER-COLOR);
 }
 .toggle-switch .knob {
   color: var(--FG-COLOR);
@@ -251,16 +248,35 @@ label {
   border-style: solid;
   border-color: var(--BORDER-COLOR);
   border-radius: 100%;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.25);
+  box-shadow: 0px 1px 4px rgba(0,0,0,0.25);
   width: 1.5rem;
   height: 1.5rem;
   transition: var(--TRANSITION);
 }
 .toggle-switch:hover .knob {
   border-color: var(--BORDER-COLOR-HOVER);
+  box-shadow: 0px 1px 4px rgba(0,0,0,0.5);
   transition: var(--TRANSITION);
 }
-.toggle-switch:active .knob {
-  transform: scale(0.9);
+.toggle-switch.active .knob {
+  border-color: var(--BG-COLOR);
+  transition: var(--TRANSITION);
+}
+
+.toggle-switch.disabled,
+.toggle-switch.disabled:hover {
+  background: var(--BG-COLOR-SECONDARY);
+  border-color: var(--BORDER-COLOR);
+  box-shadow: none;
+  cursor: default;
+}
+.toggle-switch.active.disabled {
+  background: #85b485;
+  transition: var(--TRANSITION);
+}
+.toggle-switch.disabled .knob,
+.toggle-switch.disabled:hover .knob {
+  border-color: var(--BORDER-COLOR);
+  box-shadow: 0px 1px 4px rgba(0,0,0,0.25);
   transition: var(--TRANSITION);
 }
