@@ -208,3 +208,59 @@ label {
   box-shadow: 0px 2px 8px rgba(0,0,0,0.125);
   transition: var(--TRANSITION);
 }
+
+.toggle-switch {
+  color: var(--FG-COLOR);
+  background: var(--FG-COLOR-SECONDARY);
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--BORDER-COLOR);
+  border-radius: var(--BUTTON-BORDER-RADIUS);
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.25) inset;
+  width: 3rem;
+  height: auto;
+  margin: 0;
+  margin-top: 0.125rem;
+  margin-bottom: 0.125rem;
+  padding: 0.0625rem;
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: flex-start;
+  transition: var(--TRANSITION);
+}
+.toggle-switch:hover {
+  background: var(--PRIMARY-COLOR);
+  border-color: var(--BORDER-COLOR-HOVER);
+  transition: var(--TRANSITION);
+}
+.toggle-switch.active {
+  background: #40a140;
+  justify-content: flex-end;
+  transition: var(--TRANSITION);
+}
+.toggle-switch.disabled,
+.toggle-switch.disabled:hover {
+  background: var(--BG-COLOR);
+  border-color: var(--BORDER-COLOR);
+}
+.toggle-switch .knob {
+  color: var(--FG-COLOR);
+  background: var(--BG-COLOR);
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--BORDER-COLOR);
+  border-radius: 100%;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.25);
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: var(--TRANSITION);
+}
+.toggle-switch:hover .knob {
+  border-color: var(--BORDER-COLOR-HOVER);
+  transition: var(--TRANSITION);
+}
+.toggle-switch:active .knob {
+  transform: scale(0.9);
+  transition: var(--TRANSITION);
+}
