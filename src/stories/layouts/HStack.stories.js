@@ -60,7 +60,6 @@ const Template = ({
   return (
     <AppContainer>
       <HStack
-        className="height-full"
         autoWidth={autoWidth}
         autoHeight={autoHeight}
         align={align}

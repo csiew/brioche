@@ -9,6 +9,8 @@ export function VStack({
   justify,
   autoWidth,
   autoHeight,
+  fullWidth,
+  fullHeight,
 }) {
   const determineAlignment = (alignProp) => {
     switch (alignProp) {
@@ -42,7 +44,7 @@ export function VStack({
   }
 
   return (
-    <div className={`vstack ${autoWidth ? 'width-auto' : ''} ${autoHeight ? 'height-auto' : ''} ${determineAlignment(align)} ${determineJustification(justify)} ${className ? className : ''}`} style={style}>
+    <div className={`vstack ${autoWidth ? 'width-auto' : ''} ${autoHeight ? 'height-auto' : ''} ${fullWidth ? 'width-full' : ''} ${fullHeight ? 'height-full' : ''} ${determineAlignment(align)} ${determineJustification(justify)} ${className ? className : ''}`} style={style}>
       {children}
     </div>
   );
