@@ -1,7 +1,7 @@
 import React from "react";
 import "../App.css";
 
-export function ToggleSwitch({
+export function Checkbox({
   className,
   disabled,
   label,
@@ -13,11 +13,10 @@ export function ToggleSwitch({
   return (
     <div className="hstack width-auto align-center justify-start">
       <div
-        className={`toggle-switch ${disabled ? 'disabled' : ''} ${state ? 'active' : ''} ${className ? className : ''}`}
+        className={`checkbox ${disabled ? 'disabled' : ''} ${state ? 'active' : ''} ${className ? className : ''}`}
         style={style}
         onClick={!disabled ? onClick : undefined}
       >
-        <div className="knob"></div>
       </div>
       {
         label ?

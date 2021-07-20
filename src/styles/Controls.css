@@ -209,6 +209,49 @@ label {
   transition: var(--TRANSITION);
 }
 
+.checkbox {
+  color: var(--FG-COLOR);
+  background: none;
+  border-width: 3px;
+  border-style: solid;
+  border-color: var(--BORDER-COLOR);
+  border-radius: var(--BORDER-RADIUS);
+  cursor: pointer;
+  width: 1.75rem;
+  height: 1.75rem;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: flex-start;
+  transition: var(--TRANSITION);
+}
+.checkbox:hover {
+  border-color: var(--PRIMARY-COLOR);
+}
+.checkbox::after {
+  content: "\02714";
+  visibility: hidden;
+  padding: 0.25rem;
+  transition: var(--TRANSITION);
+}
+.checkbox.active {
+  background: var(--PRIMARY-COLOR);
+  border-color: var(--PRIMARY-COLOR);
+  transition: var(--TRANSITION);
+}
+.checkbox.active:hover {
+  border-color: var(--SECONDARY-COLOR);
+}
+.checkbox.active::after {
+  color: var(--BG-COLOR);
+  content: "\02714";
+  visibility: visible;
+  padding: 0.25rem;
+  transition: var(--TRANSITION);
+}
+
 .toggle-switch {
   color: var(--FG-COLOR);
   background: var(--BG-COLOR-SECONDARY);

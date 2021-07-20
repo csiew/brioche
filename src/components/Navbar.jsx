@@ -1,7 +1,7 @@
 import React from "react";
-import { Toolbar } from "./Toolbar";
+import { Toolbar } from "./Toolbar.jsx";
+import { HStack } from "../layouts/HStack.jsx";
 import "../App.css";
-import { HStack } from "../layouts/HStack";
 
 export function Navbar({
   className,

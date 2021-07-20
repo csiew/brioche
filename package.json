@@ -9,8 +9,8 @@
     "storybook": "start-storybook -p 6006 -s ./src/styles,./src/assets",
     "build-storybook": "build-storybook -s ./src/styles,./src/assets",
     "build-lib": "rollup -c; sh build.sh",
-    "clean-dist": "rm -r dist/",
-    "clean-build-lib": "rm -r dist/; rollup -c; sh build.sh"
+    "clean-dist": "rm -r dist",
+    "clean-build-lib": "rm -r dist; mkdir dist; rollup -c; sh build.sh"
   },
   "author": "Clarence Siew",
   "license": "MIT",

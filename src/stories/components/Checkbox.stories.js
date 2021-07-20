@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { AppContainer } from "../../components/AppContainer.jsx";
-import { ToggleSwitch } from "../../components/ToggleSwitch.jsx";
 import { Card, CardBody } from "../../components/Card.jsx";
+import { Checkbox } from "../../components/Checkbox.jsx";
 
 export default {
-  title: "Toggle Switch",
-  component: ToggleSwitch,
+  title: "Checkbox",
+  component: Checkbox,
   argTypes: {
     disabled: {
       control: {
@@ -16,7 +16,7 @@ export default {
     label: {
       control: {
         type: "text",
-        defaultValue: "This is a toggle switch",
+        defaultValue: "This is a checkbox",
       }
     },
   }
@@ -36,7 +36,7 @@ const Template = ({
     <AppContainer className="padding-xl">
       <Card className="width-max-600 height-min-320">
         <CardBody>
-          <ToggleSwitch label={label} state={state} disabled={disabled} onClick={handleToggle} />
+          <Checkbox label={label} state={state} disabled={disabled} onClick={handleToggle} />
           <div className="margin-s-top">The toggle is <strong>{state ? 'ON' : 'OFF'}</strong></div>
         </CardBody>
       </Card>
@@ -47,5 +47,5 @@ const Template = ({
 export const Default = Template.bind({});
 Default.args = {
   disabled: false,
-  label: "This is a toggle switch",
+  label: "This is a checkbox",
 };
