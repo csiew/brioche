@@ -252,6 +252,46 @@ label {
   transition: var(--TRANSITION);
 }
 
+.radio-button {
+  color: var(--FG-COLOR);
+  background: none;
+  border-width: 3px;
+  border-style: solid;
+  border-color: var(--BORDER-COLOR);
+  border-radius: 100%;
+  cursor: pointer;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0.25rem;
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: flex-start;
+  transition: var(--TRANSITION);
+}
+.radio-button:hover {
+  border-color: var(--PRIMARY-COLOR);
+}
+.radio-button.active {
+  border-color: var(--PRIMARY-COLOR);
+  transition: var(--TRANSITION);
+}
+.radio-button.active:hover {
+  border-color: var(--SECONDARY-COLOR);
+}
+.radio-button .knob {
+  background: var(--PRIMARY-COLOR);
+  border-radius: 100%;
+  opacity: 0;
+  width: 0.75rem;
+  height: 0.75rem;
+  transition: var(--TRANSITION);
+}
+.radio-button.active .knob {
+  opacity: 1;
+}
+
 .toggle-switch {
   color: var(--FG-COLOR);
   background: var(--BG-COLOR-SECONDARY);

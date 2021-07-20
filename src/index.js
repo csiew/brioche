@@ -8,6 +8,7 @@ export * from "./components/Navbar.jsx";
 export * from "./components/PageHeader.jsx";
 export * from "./components/PageLayout.jsx";
 export * from "./components/Panel.jsx";
+export * from "./components/RadioButton.jsx";
 export * from "./components/TabBar.jsx";
 export * from "./components/Table.jsx";
 export * from "./components/TextAreaBox.jsx";
