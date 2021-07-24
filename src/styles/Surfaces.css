@@ -33,13 +33,6 @@
   padding: 0;
 }
 
-.card.no-style,
-.card.no-style :is(.title, .body) {
-  background: none;
-  border: none;
-  box-shadow: none;
-}
-
 @media only screen and (max-width: 1024px) {
   .card {
     width: 100%;
@@ -90,6 +83,12 @@
   color: var(--FG-COLOR-SECONDARY);
   padding-top: 0.25rem;
   padding-bottom: 1rem;
+}
+
+.card.no-style {
+  background: none;
+  border: none;
+  box-shadow: none;
 }
 
 .modal-container {

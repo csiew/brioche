@@ -91,7 +91,6 @@ const ArticleTemplate = ({
   return (
     <AppContainer>
       <PageLayout
-        className="font-family-serif"
         header={
           <PageHeader title={title} isItalic={false} isTextured={false} />
         }
