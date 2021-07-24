@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../App.css";
 
@@ -26,9 +26,28 @@ export function ListItem({
   href,
   openInNewTab,
 }) {
+  const observerRef = useRef(null);
+  const io = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    io.current = new IntersectionObserver(entry => {
+      setIsVisible(entry[0].isIntersecting);
+    }, {
+      root: document.querySelector("#App"),
+      rootMargin: "0px 0px 0px 0px",
+      threshold: 0.75,
+    });
+    io.current.observe(observerRef.current);
+    return () => {
+      if (io.current) io.current.disconnect();
+    };
+  }, [isVisible, observerRef]);
+  
   if (to) {
     return (
       <NavLink
+        ref={observerRef}
         title={tooltip}
         className={`item ${selected ? 'active' : ''} ${className ? className : ''}`}
         onClick={onClick}
@@ -41,6 +60,7 @@ export function ListItem({
   } else if (href) {
     return (
       <a
+        ref={observerRef}
         title={tooltip}
         className={`item ${className ? className : ''}`}
         onClick={onClick}
@@ -54,6 +74,7 @@ export function ListItem({
   } else {
     return (
       <div
+        ref={observerRef}
         title={tooltip}
         className={`item ${selected ? 'active' : ''} ${className ? className : ''}`}
         onClick={onClick}

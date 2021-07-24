@@ -1,6 +1,6 @@
 import React from "react";
-import { AppContainer } from "../components/AppContainer.jsx";
-import { TextBox } from "../components/TextBox.jsx";
+import { AppContainer } from "../../components/AppContainer.jsx";
+import { TextBox } from "../../components/TextBox.jsx";
 
 const testData = {
   label: "Lorem ipsum",

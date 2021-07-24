@@ -5,7 +5,7 @@ button, .button, input[type=submit] {
   border-style: solid;
   border-color: var(--BUTTON-BG-COLOR);
   border-radius: var(--BUTTON-BORDER-RADIUS);
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.25);
+  box-shadow: none;
   font-size: inherit;
   font-family: inherit;
   font-weight: 600;
@@ -26,22 +26,26 @@ button, .button, input[type=submit] {
   color: var(--BUTTON-FG-COLOR);
   background: var(--BUTTON-BG-COLOR-HOVER);
   border-color: var(--BUTTON-BG-COLOR-HOVER);
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.5);
+  box-shadow: 0px 1px 4px rgba(0,0,0,0.5);
   text-decoration: none;
   transition: var(--TRANSITION);
 }
 :is(button, .button, input[type=submit]):hover:active {
   background: var(--BUTTON-BG-COLOR-ACTIVE);
   border-color: var(--BUTTON-BG-COLOR-ACTIVE);
-  box-shadow: 0px 1px 2px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 2px rgba(0,0,0,0.5);
   transform: scale(0.98);
   transition: var(--TRANSITION);
+}
+:is(button, .button, input[type=submit]):focus {
+  border-color: var(--PRIMARY-COLOR);
 }
 :is(button, .button, input[type=submit]):disabled,
 :is(button, .button, input[type=submit]).disabled {
   color: var(--BUTTON-FG-COLOR-DISABLED);
   background: var(--BUTTON-BG-COLOR-DISABLED);
   border-color: var(--BUTTON-BG-COLOR-DISABLED);
+  box-shadow: none;
   cursor: default;
   transform: none !important;
   transition: var(--TRANSITION);
@@ -84,6 +88,29 @@ button, .button, input[type=submit] {
   border-color: var(--FG-COLOR) !important;
 }
 
+.button-hollow {
+  color: var(--PRIMARY-COLOR) !important;
+  background: none !important;
+  border-color: var(--PRIMARY-COLOR) !important;
+  box-shadow: none !important;
+}
+.button-hollow:hover {
+  color: var(--BG-COLOR) !important;
+  background: var(--PRIMARY-COLOR) !important;
+  background: var(--PRIMARY-COLOR) !important;
+  box-shadow: none !important;
+}
+.button-hollow:active {
+  color: var(--BG-COLOR) !important;
+  background: var(--SECONDARY-COLOR) !important;
+  border-color: var(--SECONDARY-COLOR) !important;
+  box-shadow: none !important;
+}
+.button-hollow.button-icon-only:is(:hover, :active) {
+  color: var(--FG-COLOR) !important;
+  background: none !important;
+}
+
 input[type=text],
 input[type=email],
 input[type=password],
@@ -91,7 +118,7 @@ textarea,
 select {
   color: var(--INPUT-FG-COLOR);
   background: var(--INPUT-BG-COLOR);
-  border-width: 1px;
+  border-width: 2px;
   border-style: solid;
   border-color: var(--BORDER-COLOR);
   border-radius: var(--BORDER-RADIUS);
@@ -109,11 +136,13 @@ textarea {
 :is(input[type=text], input[type=email], input[type=password], select):hover {
   background: var(--INPUT-BG-COLOR-HOVER);
   border-color: var(--BORDER-COLOR-HOVER);
+  box-shadow: 0px 1px 4px rgba(0,0,0,0.125) inset;
   transition: var(--TRANSITION);
 }
 :is(input[type=text], input[type=email], input[type=password], textarea, select):focus {
   background: var(--INPUT-BG-COLOR-ACTIVE);
   border-color: var(--PRIMARY-COLOR);
+  box-shadow: 0px 1px 4px rgba(0,0,0,0.25) inset;
   outline: none;
   transition: var(--TRANSITION);
 }
@@ -177,5 +206,160 @@ label {
   color: var(--BG-COLOR) !important;
   background: var(--PRIMARY-COLOR);
   box-shadow: 0px 2px 8px rgba(0,0,0,0.125);
+  transition: var(--TRANSITION);
+}
+
+.checkbox {
+  color: var(--FG-COLOR);
+  background: none;
+  border-width: 3px;
+  border-style: solid;
+  border-color: var(--BORDER-COLOR);
+  border-radius: var(--BORDER-RADIUS);
+  cursor: pointer;
+  width: 1.75rem;
+  height: 1.75rem;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: flex-start;
+  transition: var(--TRANSITION);
+}
+.checkbox:hover {
+  border-color: var(--PRIMARY-COLOR);
+}
+.checkbox::after {
+  content: "\02714";
+  visibility: hidden;
+  padding: 0.25rem;
+  transition: var(--TRANSITION);
+}
+.checkbox.active {
+  background: var(--PRIMARY-COLOR);
+  border-color: var(--PRIMARY-COLOR);
+  transition: var(--TRANSITION);
+}
+.checkbox.active:hover {
+  border-color: var(--SECONDARY-COLOR);
+}
+.checkbox.active::after {
+  color: var(--BG-COLOR);
+  content: "\02714";
+  visibility: visible;
+  padding: 0.25rem;
+  transition: var(--TRANSITION);
+}
+
+.radio-button {
+  color: var(--FG-COLOR);
+  background: none;
+  border-width: 3px;
+  border-style: solid;
+  border-color: var(--BORDER-COLOR);
+  border-radius: 100%;
+  cursor: pointer;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0.25rem;
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: flex-start;
+  transition: var(--TRANSITION);
+}
+.radio-button:hover {
+  border-color: var(--PRIMARY-COLOR);
+}
+.radio-button.active {
+  border-color: var(--PRIMARY-COLOR);
+  transition: var(--TRANSITION);
+}
+.radio-button.active:hover {
+  border-color: var(--SECONDARY-COLOR);
+}
+.radio-button .knob {
+  background: var(--PRIMARY-COLOR);
+  border-radius: 100%;
+  opacity: 0;
+  width: 0.75rem;
+  height: 0.75rem;
+  transition: var(--TRANSITION);
+}
+.radio-button.active .knob {
+  opacity: 1;
+}
+
+.toggle-switch {
+  color: var(--FG-COLOR);
+  background: var(--BG-COLOR-SECONDARY);
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--BORDER-COLOR);
+  border-radius: var(--BUTTON-BORDER-RADIUS);
+  box-shadow: 0px 1px 4px rgba(0,0,0,0.25) inset;
+  cursor: pointer;
+  width: 3rem;
+  height: auto;
+  margin: 0;
+  margin-top: 0.125rem;
+  margin-bottom: 0.125rem;
+  padding: 0.0625rem;
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: flex-start;
+  transition: var(--TRANSITION);
+}
+.toggle-switch:hover {
+  background: var(--PRIMARY-COLOR);
+  border-color: var(--BORDER-COLOR-HOVER);
+  box-shadow: 0px 1px 4px rgba(0,0,0,0.5) inset;
+  transition: var(--TRANSITION);
+}
+.toggle-switch.active {
+  background: #40a140;
+  justify-content: flex-end;
+  transition: var(--TRANSITION);
+}
+.toggle-switch .knob {
+  color: var(--FG-COLOR);
+  background: var(--BG-COLOR);
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--BORDER-COLOR);
+  border-radius: 100%;
+  box-shadow: 0px 1px 4px rgba(0,0,0,0.25);
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: var(--TRANSITION);
+}
+.toggle-switch:hover .knob {
+  border-color: var(--BORDER-COLOR-HOVER);
+  box-shadow: 0px 1px 4px rgba(0,0,0,0.5);
+  transition: var(--TRANSITION);
+}
+.toggle-switch.active .knob {
+  border-color: var(--BG-COLOR);
+  transition: var(--TRANSITION);
+}
+
+.toggle-switch.disabled,
+.toggle-switch.disabled:hover {
+  background: var(--BG-COLOR-SECONDARY);
+  border-color: var(--BORDER-COLOR);
+  box-shadow: none;
+  cursor: default;
+}
+.toggle-switch.active.disabled {
+  background: #85b485;
+  transition: var(--TRANSITION);
+}
+.toggle-switch.disabled .knob,
+.toggle-switch.disabled:hover .knob {
+  border-color: var(--BORDER-COLOR);
+  box-shadow: 0px 1px 4px rgba(0,0,0,0.25);
   transition: var(--TRANSITION);
 }

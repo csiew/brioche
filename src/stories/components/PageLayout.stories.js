@@ -1,8 +1,8 @@
 import React from "react";
-import { AppContainer } from "../components/AppContainer.jsx";
-import { PageLayout } from "../components/PageLayout.jsx";
-import { PageHeader } from "../components/PageHeader.jsx";
-import { Card } from "../components/Card.jsx";
+import { AppContainer } from "../../components/AppContainer.jsx";
+import { PageLayout } from "../../components/PageLayout.jsx";
+import { PageHeader } from "../../components/PageHeader.jsx";
+import { Card } from "../../components/Card.jsx";
 import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
 
 const testData = {
@@ -38,7 +38,7 @@ const Template = ({
           header === null ?
             null
           :
-            <PageHeader title={title} isItalic={true} isTextured={false} />
+            <PageHeader title={title} isItalic={false} isTextured={false} />
         }
         main={
           main === null ?
@@ -71,7 +71,7 @@ const Template = ({
                 title={title}
                 body={content.slice(0, 255)}
                 isCollapsible
-                collapseButtonClassName="card-border-radius padding-xs font-scale-xs"
+                collapseButtonClassName="button-hollow button-icon-only padding-none font-scale-s"
                 isCollapsedValue="Show"
                 isNotCollapsedValue="Hide"
               />
@@ -92,7 +92,7 @@ const ArticleTemplate = ({
     <AppContainer>
       <PageLayout
         header={
-          <PageHeader title={title} isItalic={true} isTextured={false} />
+          <PageHeader title={title} isItalic={false} isTextured={false} />
         }
         main={
           <>

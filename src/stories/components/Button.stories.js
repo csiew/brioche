@@ -1,6 +1,7 @@
 import React from "react";
-import { AppContainer } from "../components/AppContainer.jsx";
-import { Button } from "../components/Button.jsx";
+import { AppContainer } from "../../components/AppContainer.jsx";
+import { Button } from "../../components/Button.jsx";
+import { Card, CardBody } from "../../components/Card.jsx";
 import { MdMenu } from "react-icons/md";
 
 const testData = {
@@ -26,6 +27,12 @@ export default {
     },
     onClick: { action: "clicked" },
     primary: {
+      control: {
+        type: "boolean",
+        defaultValue: false,
+      }
+    },
+    hollow: {
       control: {
         type: "boolean",
         defaultValue: false,
@@ -57,21 +64,27 @@ const Template = ({
   label,
   tooltip,
   primary,
+  hollow,
   iconOnly,
   round,
   disabled,
 }) => {
   return (
     <AppContainer className="padding-xl">
-      <Button
-        style={style}
-        label={label}
-        tooltip={tooltip}
-        primary={primary}
-        iconOnly={iconOnly}
-        round={round}
-        disabled={disabled}
-      />
+      <Card className="width-max-600 height-min-320">
+        <CardBody>
+          <Button
+            style={style}
+            label={label}
+            tooltip={tooltip}
+            primary={primary}
+            hollow={hollow}
+            iconOnly={iconOnly}
+            round={round}
+            disabled={disabled}
+          />
+        </CardBody>
+      </Card>
     </AppContainer>
   );
 };
@@ -82,6 +95,7 @@ Default.args = {
   label: testData.label,
   tooltip: testData.tooltip,
   primary: false,
+  hollow: false,
   iconOnly: false,
   round: false,
   disabled: false,
@@ -93,10 +107,23 @@ Primary.args = {
   label: testData.label,
   tooltip: testData.tooltip,
   primary: true,
+  hollow: false,
   iconOnly: false,
   round: false,
   disabled: false,
 }
+
+export const Hollow = Template.bind({});
+Hollow.args = {
+  style: null,
+  label: testData.label,
+  tooltip: testData.tooltip,
+  primary: false,
+  hollow: true,
+  iconOnly: false,
+  round: false,
+  disabled: false,
+};
 
 export const IconOnly = Template.bind({});
 IconOnly.args = {
@@ -107,6 +134,7 @@ IconOnly.args = {
   label: <MdMenu size="1.5rem" />,
   tooltip: testData.tooltip,
   primary: true,
+  hollow: false,
   iconOnly: true,
   round: true,
   disabled: false,
