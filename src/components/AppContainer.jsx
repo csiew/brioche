@@ -10,7 +10,6 @@ export function AppContainer({
 }) {
   useEffect(() => {
     if (styleOverride) {
-      console.log(styleOverride);
       const root = document.getElementById("App");
       Object.entries(styleOverride).forEach(item => {
         if (Object.keys(styleVarMap).includes(item[0])) {

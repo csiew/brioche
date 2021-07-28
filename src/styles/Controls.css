@@ -214,7 +214,7 @@ label {
   background: none;
   border-width: 3px;
   border-style: solid;
-  border-color: var(--BORDER-COLOR);
+  border-color: var(--FG-COLOR-SECONDARY);
   border-radius: var(--BORDER-RADIUS);
   cursor: pointer;
   width: 1.75rem;
@@ -228,7 +228,7 @@ label {
   transition: var(--TRANSITION);
 }
 .checkbox:hover {
-  border-color: var(--PRIMARY-COLOR);
+  border-color: var(--FG-COLOR);
 }
 .checkbox::after {
   content: "\02714";
@@ -257,7 +257,7 @@ label {
   background: none;
   border-width: 3px;
   border-style: solid;
-  border-color: var(--BORDER-COLOR);
+  border-color: var(--FG-COLOR-SECONDARY);
   border-radius: 100%;
   cursor: pointer;
   width: auto;
@@ -271,7 +271,7 @@ label {
   transition: var(--TRANSITION);
 }
 .radio-button:hover {
-  border-color: var(--PRIMARY-COLOR);
+  border-color: var(--FG-COLOR);
 }
 .radio-button.active {
   border-color: var(--PRIMARY-COLOR);
@@ -293,11 +293,10 @@ label {
 }
 
 .toggle-switch {
-  color: var(--FG-COLOR);
-  background: var(--BG-COLOR-SECONDARY);
-  border-width: 1px;
+  background: var(--TOGGLE-SWITCH-BG-COLOR);
+  border-width: 2px;
   border-style: solid;
-  border-color: var(--BORDER-COLOR);
+  border-color: var(--TOGGLE-SWITCH-BORDER-COLOR);
   border-radius: var(--BUTTON-BORDER-RADIUS);
   box-shadow: 0px 1px 4px rgba(0,0,0,0.25) inset;
   cursor: pointer;
@@ -306,7 +305,7 @@ label {
   margin: 0;
   margin-top: 0.125rem;
   margin-bottom: 0.125rem;
-  padding: 0.0625rem;
+  padding: 0.25rem;
   display: inline-flex;
   flex-flow: row;
   align-items: center;
@@ -314,52 +313,52 @@ label {
   transition: var(--TRANSITION);
 }
 .toggle-switch:hover {
-  background: var(--PRIMARY-COLOR);
-  border-color: var(--BORDER-COLOR-HOVER);
+  background: var(--TOGGLE-SWITCH-BG-COLOR-HOVER);
+  border-color: var(--TOGGLE-SWITCH-BORDER-COLOR-HOVER);
   box-shadow: 0px 1px 4px rgba(0,0,0,0.5) inset;
-  transition: var(--TRANSITION);
 }
 .toggle-switch.active {
-  background: #40a140;
+  background: var(--TOGGLE-SWITCH-BG-COLOR-ACTIVE);
+  border-color: var(--TOGGLE-SWITCH-BORDER-COLOR-ACTIVE);
   justify-content: flex-end;
-  transition: var(--TRANSITION);
 }
 .toggle-switch .knob {
-  color: var(--FG-COLOR);
-  background: var(--BG-COLOR);
-  border-width: 1px;
+  background: var(--TOGGLE-SWITCH-KNOB-BG-COLOR);
+  border-width: 2px;
   border-style: solid;
-  border-color: var(--BORDER-COLOR);
+  border-color: var(--TOGGLE-SWITCH-KNOB-BORDER-COLOR);
   border-radius: 100%;
   box-shadow: 0px 1px 4px rgba(0,0,0,0.25);
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.25rem;
+  height: 1.25rem;
   transition: var(--TRANSITION);
 }
 .toggle-switch:hover .knob {
-  border-color: var(--BORDER-COLOR-HOVER);
+  background: var(--TOGGLE-SWITCH-KNOB-BG-COLOR-HOVER);
+  border-color: var(--TOGGLE-SWITCH-KNOB-BORDER-COLOR-HOVER);
   box-shadow: 0px 1px 4px rgba(0,0,0,0.5);
-  transition: var(--TRANSITION);
 }
-.toggle-switch.active .knob {
-  border-color: var(--BG-COLOR);
-  transition: var(--TRANSITION);
+.toggle-switch.active .knob,
+.toggle-switch.active:hover .knob {
+  background: var(--TOGGLE-SWITCH-KNOB-BG-COLOR-ACTIVE);
+  border-color: var(--TOGGLE-SWITCH-KNOB-BORDER-COLOR-ACTIVE);
 }
 
 .toggle-switch.disabled,
 .toggle-switch.disabled:hover {
-  background: var(--BG-COLOR-SECONDARY);
-  border-color: var(--BORDER-COLOR);
+  background: var(--TOGGLE-SWITCH-BG-COLOR-DISABLED);
+  border-color: var(--TOGGLE-SWITCH-BORDER-COLOR-DISABLED);
   box-shadow: none;
   cursor: default;
 }
 .toggle-switch.active.disabled {
-  background: #85b485;
+  background: var(--TOGGLE-SWITCH-BG-COLOR-ACTIVE-DISABLED);
   transition: var(--TRANSITION);
 }
 .toggle-switch.disabled .knob,
 .toggle-switch.disabled:hover .knob {
-  border-color: var(--BORDER-COLOR);
+  background: var(--TOGGLE-SWITCH-KNOB-BG-COLOR-DISABLED);
+  border-color: var(--TOGGLE-SWITCH-KNOB-BORDER-COLOR-DISABLED);
   box-shadow: 0px 1px 4px rgba(0,0,0,0.25);
   transition: var(--TRANSITION);
 }
