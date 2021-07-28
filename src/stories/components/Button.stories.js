@@ -68,6 +68,8 @@ const Template = ({
   iconOnly,
   round,
   disabled,
+  href,
+  openInNewTab,
 }) => {
   return (
     <AppContainer className="padding-xl">
@@ -82,6 +84,8 @@ const Template = ({
             iconOnly={iconOnly}
             round={round}
             disabled={disabled}
+            href={href}
+            openInNewTab={href}
           />
         </CardBody>
       </Card>
@@ -99,6 +103,20 @@ Default.args = {
   iconOnly: false,
   round: false,
   disabled: false,
+};
+
+export const Link = Template.bind({});
+Link.args = {
+  style: null,
+  label: testData.label,
+  tooltip: testData.tooltip,
+  primary: false,
+  hollow: false,
+  iconOnly: false,
+  round: false,
+  disabled: false,
+  href: "https://clarencesiew.com/",
+  openInNewTab: true,
 };
 
 export const Primary = Template.bind({});

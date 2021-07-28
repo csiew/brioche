@@ -1,6 +1,6 @@
 {
   "name": "brioche",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "A React UI component library that's just as soft and pillowy as the bread it's named after",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
